@@ -28,16 +28,14 @@ ul.topnav li a {
 	padding: 14px 16px;
 	text-decoration: none;
 }
-ul.topnav li a:hover :not(.active){background-color:#b0cad9;color:#1703F7;}
+ul.topnav li a:hover:not(.active){background-color:#b0cad9;color:#1703F7;}
 ul.topnav li a.active {
 	background-color: #F9FBFC;
 	color: #1703F7;
 }
-
 ul.topnav li.right {
 	float: right;
 }
-
 @media screen and (max-width: 600px) {
 	ul.topnav li.right, ul.topnav li {
 		float: none;
@@ -47,9 +45,9 @@ ul.topnav li.right {
 </head>
 <body>
 	<ul class="topnav">
-		<li><a class="active" href="#home">Home</a></li>
-		<li><a href="#news">AboutUs</a></li>
-		<li><a href="#contact">Contact</a></li>
+		<li><a class="active " href="#home">Home</a></li>
+		<li><a  href="#news">AboutUs</a></li>
+		<li><a  href="#contact">Contact</a></li>
 		<li class="right"><a href="login"><span class="glyphicon glyphicon-log-in"> LogIn</span></a></li>
 		<li class="right"><a href="#about"><span class="glyphicon glyphicon-user"> SignUp</span></a></li>
 	</ul>

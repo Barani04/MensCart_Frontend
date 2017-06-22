@@ -10,7 +10,7 @@ body{
 background:url(resources/img/background.jpg);
 padding:0px;
 }
-/* header{
+ header{
 	margin:0px;
 	padding:0px;
 	background-color:purple;
@@ -21,7 +21,7 @@ img{
 	padding-top:5px;
 	padding-bottom:5px;
     
-} */
+}
 </style>
 </head>
 <body>
