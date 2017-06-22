@@ -5,9 +5,31 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+body{
+background:url(resources/img/background.jpg);
+padding:0px;
+}
+/* header{
+	margin:0px;
+	padding:0px;
+	background-color:purple;
+}
+img{
+	
+	padding-left:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+    
+} */
+</style>
 </head>
-<body background="background.jpg">
-	<%@ include file="navbar.jsp" %>
-	<%@ include file="Supplier.jsp" %>
+<body>
+	<header>
+		<img src="resources/img/logo.png" />
+	</header>
+	
+	<%@ include file="navbar.jsp" %>s
+	<%@ include file="carousel.jsp" %>
 </body>
 </html>

@@ -14,7 +14,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="navbar.jsp" %>
 	<div class="container">
+	<form action="login">
 		<div id="loginbox" style="margin-top: 50px;"
 			class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 			<div class="panel panel-info">
@@ -62,8 +64,7 @@
 							<!-- Button -->
 
 							<div class="col-sm-12 controls">
-								<a id="btn-login" href="#" class="btn btn-success">Login </a> 
-
+								<a style="padding-bottom: 5px" id="btn-login" href="#" class="btn btn-success" >Login </a> 								
 							</div>
 						</div>
 
@@ -71,7 +72,7 @@
 						<div class="form-group">
 							<div class="col-md-12 control">
 								<div
-									style="border-top: 1px solid #888; padding-top: 15px; font-size: 85%">
+									style=" margin-top: 5px; border-top: 1px solid #888; padding-top: 15px; font-size: 85%">
 									Don't have an account! <a href="#"
 										onClick="$('#loginbox').hide(); $('#signupbox').show()">
 										Sign Up Here </a>
@@ -168,12 +169,15 @@
 								<button id="btn-signup" type="button" class="btn btn-info">
 									<i class="icon-hand-right"></i> &nbsp Sign Up
 								</button>
+							
 							</div>
 						</div>
 					</form>
 				</div>
 			</div>
+		
 	</div>
+	</form>
 	</div>
 </body>
 </html>
