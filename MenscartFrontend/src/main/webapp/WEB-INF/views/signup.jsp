@@ -86,7 +86,7 @@
 
 						<div class="form-group">
 							<!-- Button -->
-							<div class="col-md-offset-3 col-md-9">
+							<div class="col-md-offset-5 col-md-2 col-md-offset-5">
 								<button id="btn-signup" type="button" class="btn btn-info">
 									<i class="icon-hand-right"></i> Sign Up
 								</button>

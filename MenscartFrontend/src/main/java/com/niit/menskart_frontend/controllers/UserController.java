@@ -1,42 +1,43 @@
 package com.niit.menskart_frontend.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
+import java.util.Collection;
 
-import com.niit.menscart_backend.DAO.RoleDAO;
-import com.niit.menscart_backend.DAO.UserDAO;
-import com.niit.menscart_backend.model.Role;
-import com.niit.menscart_backend.model.User;
+import javax.servlet.http.HttpSession;
+
+/*import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;*/
+import org.springframework.stereotype.Controller;
+/*import org.springframework.web.bind.annotation.RequestMapping;*/
 
 @Controller
 public class UserController {
 	
-	@Autowired
-	private UserDAO userDAO;
+	String page;
 	
-	@Autowired
-	private Role role;
-	
-	@Autowired
-	private RoleDAO roleDAO;
-	
-	@RequestMapping("newUser")
-	public String newUser(@ModelAttribute User user){
-		/*String message;*/
+	/*@RequestMapping("/login_success")
+	public String loginSuccess(HttpSession session)
+	{
+		System.out.println("---Login Successful---");
+		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		
-		role.setRole("ROLE_USER");
-		role.setUserName(user.getUserName());
-		role.setContactNo(user.getContactNo());
-		role.setEmailId(user.getEmailId());
-		user.setEnabled(true);
+		session.setAttribute("username", username);
 		
-		userDAO.saveOrUpdate(user);
-		roleDAO.saveOrUpdate(role);
+		Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>) SecurityContextHolder.getContext().getAuthentication().getAuthorities();
 		
-		return "home";
-	}
-	
-
+		for(GrantedAuthority role:authorities)
+		{
+			System.out.println("Role:"+role.getAuthority()+" User Name:"+username);
+			
+			if(role.equals("ROLE_ADMIN"))
+			{
+				page = "admin";
+			}
+			else
+			{
+				page="user";
+			}
+		}
+		
+		return page;
+	}*/
 }

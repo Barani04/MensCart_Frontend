@@ -44,13 +44,16 @@ ul.topnav li.right {
 </style>
 </head>
 <body>
-	<ul class="topnav">
+	<ul style="margin-bottom: 2px" class="topnav">
 		<li><a class="active " href="home">Home</a></li>
 		<li><a  href="Product">Product</a></li>
 		<li><a  href="Category">Category</a></li>
 		<li><a  href="Supplier">Supplier</a></li>
-		<li class="right"><a href="login"><span class="glyphicon glyphicon-log-in" >LogIn</span></a></li>
-		<li class="right"><a href="signup"><span class="glyphicon glyphicon-user">SignUp</span></a></li>
+		
+		<!-- <li><a  href="newProduct">NewProduct</a></li> -->
+		
+		<li class="right"><a href="login"><span class="glyphicon glyphicon-log-in" > LogIn</span></a></li>
+		<li class="right"><a href="signup"><span class="glyphicon glyphicon-user"> SignUp</span></a></li>
 	</ul>
 </body>
 

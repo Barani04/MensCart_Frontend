@@ -34,25 +34,5 @@ public class HomeController {
 
 		return "home";
 	}
-	@RequestMapping("Product")
-	public String pro(Model model) {
-		model.addAttribute("isUserClickedProduct", "true");
-		
-		return "home";
-	}
-	
-	@RequestMapping("Category")
-	public String Category(Model model) {
-		model.addAttribute("isUserClickedCategory", "true");
-		
-		return "home";
-	}
-	
-	@RequestMapping("Supplier")
-	public String Supplier(Model model) {
-		model.addAttribute("isUserClickedSupplier", "true");
-		
-		return "home";
-	}
 
 }
