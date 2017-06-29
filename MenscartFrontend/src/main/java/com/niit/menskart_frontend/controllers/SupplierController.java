@@ -20,7 +20,7 @@ public class SupplierController {
 	
 	@RequestMapping("Supplier")
 	public String Supplier(Model model){
-		List<Supplier> supdetail = supplierdao.list();
+		List<com.niit.menscart_backend.model.Supplier> supdetail = supplierdao.list();
 		model.addAttribute("supdetail", supdetail);
 		model.addAttribute("isUserClickedSupplier", true);
 		
@@ -30,8 +30,8 @@ public class SupplierController {
 	@RequestMapping("getUpdateSupplier")
 	public String getUpdateSupplier(@RequestParam(value = "supId") int supId,Model model){
 		
-		Supplier sup = supplierdao.getBySupplierId(supId);
-		List<Supplier> supdetail = supplierdao.list();
+		com.niit.menscart_backend.model.Supplier sup = supplierdao.getBySupplierId(supId);
+		List<com.niit.menscart_backend.model.Supplier> supdetail = supplierdao.list();
 		
 		boolean flag=true;
 		model.addAttribute("flag",flag);

@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div class="container">
-		<form action="newUser" onsubmit="return formsignup()"class="form-horizontal">
+		<form action="newUser" method="post" class="form-horizontal">
 			<div style="margin-top: 50px;"
 				class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 				<div class="panel panel-info">
@@ -87,10 +87,9 @@
 						<div class="form-group">
 							<!-- Button -->
 							<div class="col-md-offset-5 col-md-2 col-md-offset-5">
-								<button id="btn-signup" type="button" class="btn btn-info">
-									<i class="icon-hand-right"></i> Sign Up
+								<button  type="submit" class="btn btn-info">
+									<span class="icon-hand-right"></span> Sign Up
 								</button>
-
 							</div>
 						</div>
 					</div>

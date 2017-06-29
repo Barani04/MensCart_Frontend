@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div class="container">
-		<form action="perform_Login" method="post"class="form-horizontal" role="form">
+		<form action="perform_login" method="post"class="form-horizontal" role="form">
 			<div style="margin-top: 50px;"
 				class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 				<div class="panel panel-info">
@@ -54,12 +54,12 @@
 						</div>
 
 
-						<div style="margin-top: 10px" class="form-group">
+						<<div class="form-group">
 							<!-- Button -->
-
-							<div class="col-sm-12 controls">
-								<a style="padding-bottom: 5px" id="btn-login" href=""
-									class="btn btn-success">Login </a>
+							<div class="col-md-offset-5 col-md-2 col-md-offset-5">
+								<button  type="submit" class="btn btn-info">
+									<span class="icon-hand-right"></span> Log In
+								</button>
 							</div>
 						</div>
 
