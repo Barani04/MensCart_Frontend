@@ -24,6 +24,7 @@ public class CategoryController {
 		List<Category> catdetail = categoryDAO.list();
 		model.addAttribute("catdetail", catdetail);
 		model.addAttribute("isUserClickedCategory", "true");
+		model.addAttribute("title", "Category");
 		
 		return"home";
 	}

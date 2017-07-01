@@ -7,54 +7,78 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-<style>
-body {
-	margin: 0;
+<link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
+
+<title>FashionFactory-${title}</title>
+<script>
+	window.menu='${title}'
+</script>
+
+ <style type="text/css">
+li a{height:50px;}
+nav {
+background-color: #94f9bc !important; 
+color: #f7f7f7 !important;
+font-family: 'Bellefair', serif;
+font-weight:bold;
+border-color: #07eaf5 !important;
 }
-ul.topnav {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: #333;
+
+nav .active>a{
+	background-color: #85d8a2 !important;
+	color: #f7f7f7 !important;
 }
-ul.topnav li {
-	float: left;
-}
-ul.topnav li a {
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-ul.topnav li a:hover:not(.active){background-color:#b0cad9;color:#1703F7; height:48px;}
-ul.topnav li a.active {
-	background-color: #F9FBFC;
-	color: #1703F7;
-}
-ul.topnav li.right {
-	float: right;
-}
-@media screen and (max-width: 600px) {
-	ul.topnav li.right, ul.topnav li {
-		float: none;
-	}
+
+nav a:hover {
+	background-color: #87e8a9 !important;
+	color: #2d2b2b !important;
 }
 </style>
 </head>
 <body>
-	<ul style="margin-bottom: 2px" class="topnav">
-		<li><a class="active " href="home">Home</a></li>
-		<li><a  href="Product">Product</a></li>
-		<li><a  href="Category">Category</a></li>
-		<li><a  href="Supplier">Supplier</a></li>
-		
-		<!-- <li><a  href="newProduct">NewProduct</a></li> -->
-		
-		<li class="right"><a href="login"><span class="glyphicon glyphicon-log-in" > LogIn</span></a></li>
-		<li class="right"><a href="signup"><span class="glyphicon glyphicon-user"> SignUp</span></a></li>
-	</ul>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="home" id="home">FashionFactory</a>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                   
+                   <li id="About">
+						<a  href="About">About</a>
+					</li>
+					
+					<li id="Contact">
+						<a  href="Contact">Contact</a>
+					</li>
+                   
+					<li id="Product">
+						<a  href="Product">Product</a>
+					</li>
+					<li id="Category">
+						<a  href="Category">Category</a>
+					</li>
+					<li id="Supplier">
+						<a  href="Supplier">Supplier</a>
+					</li>
+                </ul>
+                <ul style="font-family: 'Bellefair', serif;" class="nav navbar-nav navbar-right">
+						<li class="pull-right" id="login">
+							<a href="login"><span class="glyphicon glyphicon-log-in"></span> LogIn</a>
+						</li>
+						<li class="pull-right" id="signup">
+							<a href="signup"><span class="glyphicon glyphicon-user"></span> SignUp</a>
+						</li>
+					</ul>
+            </div>
+        </div>
+    </nav>
 </body>
-
 </html>

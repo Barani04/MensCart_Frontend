@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<h2 align="center">User Page</h2>
+		<h2 align="center" style="margin-top: 60px;">User Page</h2>
 </body>
 </html>

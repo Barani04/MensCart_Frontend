@@ -9,15 +9,18 @@
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
+<style type="text/css">
+body{padding-top: 70px;}
+</style>
 </head>
 <body>
 	<div class="container">
 		<form action="newUser" method="post" class="form-horizontal">
 			<div style="margin-top: 50px;"
-				class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-				<div class="panel panel-info">
+				class="mainbox col-xs-6 col-xs-offset-3">
+				<div  class="panel panel-info">
 					<div class="panel-heading">
-						<div class="panel-title">Sign Up</div>
+						<div style="font-size: 25px;" class="panel-title">Sign Up</div>
 						<div
 							style="float: right; font-size: 80%; position: relative; top: -10px">
 							Already have an Account? <a href="login"> SignIn</a>
@@ -30,55 +33,55 @@
 							class="alert alert-danger col-sm-12"></div>
 
 						<div class="form-group">
-							<label for="email" class="col-md-3 control-label">UserName</label>
-							<div class="col-md-9">
+							<label for="email" class="col-xs-3 control-label">UserName</label>
+							<div class="col-xs-9">
 								<input type="text" class="form-control" name="userName"
-									placeholder="User Name">
+									placeholder="User Name" autofocus>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="email" class="col-md-3 control-label">Email</label>
-							<div class="col-md-9">
+							<label for="email" class="col-xs-3 control-label">Email</label>
+							<div class="col-xs-9">
 								<input type="text" class="form-control" name="emailId"
 									placeholder="Email Address">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="firstname" class="col-md-3 control-label">First
+							<label for="firstname" class="col-xs-3 control-label">First
 								Name</label>
-							<div class="col-md-9">
+							<div class="col-xs-9">
 								<input type="text" class="form-control" name="firstName"
 									placeholder="First Name">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="lastname" class="col-md-3 control-label">Last
+							<label for="lastname" class="col-xs-3 control-label">Last
 								Name</label>
-							<div class="col-md-9">
+							<div class="col-xs-9">
 								<input type="text" class="form-control" name="lastName"
 									placeholder="Last Name">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="email" class="col-md-3 control-label">Contact</label>
-							<div class="col-md-9">
+							<label for="email" class="col-xs-3 control-label">Contact</label>
+							<div class="col-xs-9">
 								<input type="text" class="form-control" name="contactNo"
 									placeholder="Mobie Number">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="email" class="col-md-3 control-label">Address</label>
-							<div class="col-md-6">
-								<input id="description" name="address" type="text" placeholder="Descripton" class="form-control input-md" >
+							<label for="email" class="col-xs-3 control-label">Address</label>
+							<div class="col-xs-6">
+								<input id="description" name="address" type="text" placeholder="Descripton" class="form-control input-xs" >
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="password" class="col-md-3 control-label">Password</label>
-							<div class="col-md-9">
+							<label for="password" class="col-xs-3 control-label">Password</label>
+							<div class="col-xs-9">
 								<input type="password" class="form-control" name="password"
 									placeholder="Password">
 							</div>
@@ -86,7 +89,7 @@
 
 						<div class="form-group">
 							<!-- Button -->
-							<div class="col-md-offset-5 col-md-2 col-md-offset-5">
+							<div class="col-xs-offset-5 col-xs-2 col-xs-offset-5">
 								<button  type="submit" class="btn btn-info">
 									<span class="icon-hand-right"></span> Sign Up
 								</button>

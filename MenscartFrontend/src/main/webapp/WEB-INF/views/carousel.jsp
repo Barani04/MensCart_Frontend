@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Wowslider.net</title>
+<title></title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description"
 	content="Made with WOW Slider - Create beautiful, responsive image sliders in a few clicks. Awesome skins and animations. Wowslider.net" />
@@ -11,6 +11,9 @@
 
 <link rel="stylesheet" type="text/css" href="resources/carousel/engine1/style.css" />
 <script type="text/javascript" src="resources/carousel/engine1/jquery.js"></script>
+<style type="text/css">
+body{padding-top: 70px;}
+</style>
 </head>
 <body style="background-color: #d7d7d7; margin: 0">
 	<div id="wowslider-container1">

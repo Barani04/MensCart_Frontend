@@ -9,15 +9,18 @@
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
+<style type="text/css">
+body{padding-top: 70px;}
+</style>
 </head>
 <body>
 	<div class="container">
-		<form action="perform_login" method="post"class="form-horizontal" role="form">
+		<form action="perform_login" method="post"class="form-horizontal">
 			<div style="margin-top: 50px;"
-				class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				class="mainbox col-xs-6 col-xs-offset-3">
 				<div class="panel panel-info">
-					<div class="panel-heading">
-						<div class="panel-title">Sign In</div>
+					<div  class="panel-heading">
+						<div style="font-size: 25px;" class="panel-title">Sign In</div>
 						<div
 							style="float: right; font-size: 80%; position: relative; top: -10px">
 							<a href="#">Forgot password?</a>
@@ -33,7 +36,7 @@
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-user"></i></span> <input id="login-username"
 								type="text" class="form-control" name="username" value=""
-								placeholder="username or email">
+								placeholder="username or email" autofocus>
 						</div>
 
 						<div style="margin-bottom: 25px" class="input-group">
@@ -54,9 +57,9 @@
 						</div>
 
 
-						<<div class="form-group">
+						<div class="form-group">
 							<!-- Button -->
-							<div class="col-md-offset-5 col-md-2 col-md-offset-5">
+							<div class="col-xs-offset-5 col-xs-2 col-xs-offset-5">
 								<button  type="submit" class="btn btn-info">
 									<span class="icon-hand-right"></span> Log In
 								</button>
@@ -65,9 +68,8 @@
 
 
 						<div class="form-group">
-							<div class="col-md-12 control">
-								<div
-									style="margin-top: 5px; border-top: 1px solid #888; padding-top: 15px; font-size: 85%">
+							<div class="col-xs-12 control">
+								<div style="margin-top: 5px; height border-top: 1px solid #888; padding-top: 15px; font-size: 85%">
 									Don't have an account! <a href="signup"> Sign Up Here </a>
 								</div>
 							</div>

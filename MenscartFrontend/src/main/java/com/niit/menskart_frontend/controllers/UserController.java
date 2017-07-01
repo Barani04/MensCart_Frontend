@@ -20,11 +20,14 @@ import com.niit.menscart_backend.model.User;
 
 @Controller
 public class UserController {
-
-	String page;
+	
+	String page=null;
 	
 	@Autowired
 	UserDAO userdao;
+	
+	@Autowired
+	User user;
 	
 	@Autowired
 	RoleDAO roledao;
@@ -39,16 +42,34 @@ public class UserController {
 
 		session.setAttribute("username", username);
 
+		
 		Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>) SecurityContextHolder.getContext()
 				.getAuthentication().getAuthorities();
-
+		
+		user= userdao.getByUserName(username);
+		
+		role = roledao.getByUserName(username);
+		
+		String r = role.getRole();
+			System.out.println("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
 		for (GrantedAuthority role : authorities) {
+			System.out.println("byeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 			System.out.println("Role:" + role.getAuthority() + " User Name:" + username);
-
-			if (role.equals("ROLE_ADMIN")) {
+			System.out.println("888888888888888888888888888888888");
+			if (r.equals("ROLE_ADMIN")) 
+			{
+				System.out.println("8111114546554");
 				page = "admin";
-			} else {
+			}
+			else if(r.equals("ROLE_USER"))  {
+				System.out.println("7777777777777777777777777777777");
 				page = "user";
+			}
+			
+			else
+			{
+				System.out.println("888888888888888888888888888");
+				System.out.println("Invalid Credidentials");
 			}
 		}
 

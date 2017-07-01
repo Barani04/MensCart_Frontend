@@ -9,8 +9,13 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+<title>FashionFactory-${title}</title>
 <style type="text/css">
+html, body {
+	background: url(resources/img/viewbac.jpg) !important;
+	padding: 0px;
+}
+body{padding-top: 70px;}
 	.custab {
 	border: 1px solid #ccc;
 	padding: 5px;
@@ -34,7 +39,7 @@
 			<form action="addpro" method="post" enctype="multipart/form-data" class="form-horizontal">
 		</c:if>
 			<div style="margin-top: 50px;"
-				class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				class="mainbox col-xs-6 col-xs-offset-3">
 				<div class="panel panel-info">
 					<div class="panel-heading">
 						<div style="font-size: 25px; text-align: center;"
@@ -44,34 +49,34 @@
 					<div style="padding-top: 30px" class="panel-body">
 						<c:if test="${flag}">
 						<div class="form-group">
-							<label class="col-md-4 control-label">Product Id:</label>
-							<div class="col-md-8">
+							<label class="col-xs-4 control-label">Product Id:</label>
+							<div class="col-xs-8">
 								<input type="text" class="form-control" name="productId"
 									value="${product.productId}" placeholder="Product Id">
 							</div>
 						</div>
 						</c:if>
 						<div class="form-group">
-							<label class="col-md-4 control-label">Product Name:</label>
-							<div class="col-md-8">
+							<label class="col-xs-4 control-label">Product Name:</label>
+							<div class="col-xs-8">
 								<input type="text" class="form-control" name="productName"
 									value="${product.productName}" placeholder="Product Name">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Product
+							<label class="col-xs-4 control-label">Product
 								Description:</label>
-							<div class="col-md-8">
+							<div class="col-xs-8">
 								<input name="productDescription" type="text"
 									value="${product.productDescription}"
-									placeholder="Product Descripton" class="form-control input-md">
+									placeholder="Product Descripton" class="form-control input-xs">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label" for="post">Category</label>
-							<div class="col-md-6">
+							<label class="col-xs-4 control-label" for="post">Category</label>
+							<div class="col-xs-6">
 								<select name="categoryId" id="category" class="form-control">
 									<option value="" class="form-control">Select Category</option>
 									<c:forEach items="${catdetail}" var="category">
@@ -82,8 +87,8 @@
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label" for="post">Supplier</label>
-							<div class="col-md-6">
+							<label class="col-xs-4 control-label" for="post">Supplier</label>
+							<div class="col-xs-6">
 								<select name="supplierId" id="supplier" class="form-control">
 									<option value="" class="form-control">Select Supplier</option>
 									<c:forEach items="${supdetail}" var="supplier"
@@ -95,37 +100,37 @@
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Stock:</label>
-							<div class="col-md-8">
+							<label class="col-xs-4 control-label">Stock:</label>
+							<div class="col-xs-8">
 								<input type="text" class="form-control" name="stock"
 									value="${product.stock}" placeholder="Stock">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Price:</label>
-							<div class="col-md-8">
+							<label class="col-xs-4 control-label">Price:</label>
+							<div class="col-xs-8">
 								<input type="text" class="form-control" name="price"
 									value="${product.price}" placeholder="Price">
 							</div>
 						</div>
 					<c:if test="${!flag}">
 						<div class="form-group">
-							<label class="col-md-4 control-label">Product Image:</label>
-							<div class="col-md-8">
+							<label class="col-xs-4 control-label">Product Image:</label>
+							<div class="col-xs-8">
 								<input type="file" class="form-control" name="pimage">
 							</div>
 						</div>
 					
 						<div class="form-group">
-							<div class="col-md-offset-5 col-md-3 col-md-offset-7">
+							<div class="col-xs-offset-5 col-xs-3 col-xs-offset-7">
 								<input type="submit" value="Add Product" class="btn btn-info" />
 							</div>
 						</div>
 					</c:if>
 					<c:if test="${flag}">
 						<div class="form-group">
-							<div class="col-md-offset-5 col-md-3 col-md-offset-7">
+							<div class="col-xs-offset-5 col-xs-3 col-xs-offset-7">
 								<input type="submit" value="Update Product" class="btn btn-info" />
 							</div>
 						</div>
@@ -138,11 +143,11 @@
 
 		<!-- TABLE  DISPLAY -->
 
-		<div class="row col-md-10 custyle">
-			<table class="table table-striped custab">
-				<thead style="color: #090df7; font-weight: bold; font-size: 20px;"
+		<div class="row col-xs-offset-1 col-xs-10 custyle">
+			<table class="table table-striped table-bordered custab">
+				<thead style="color:white; font-weight: bold; font-size: 20px; background-color: green;"
 					class="table-default active">
-					<tr>
+					<tr class="text-center">
 						<td>S.No</td>
 						<td>Product Id</td>
 						<td>Product Name</td>
@@ -154,7 +159,7 @@
 						<td>Delete</td>
 					</tr>
 				</thead>
-				<tbody style="color: #090df7; font-size: 15px;">
+				<tbody style="color: #090df7; font-size: 15px; background-color: #64f153; font-family: serif;">
 					<c:forEach items="${prodetail}" var="product" varStatus="status">
 						<tr>
 							<td>${status.count}</td>
@@ -163,13 +168,13 @@
 							<td>${product.categoryId}</td>
 							<td>${product.supplierId}</td>
 							<td>${product.stock}</td>
-							<td>${product.price}</td>
-							<td class="text-center"><a class='btn btn-info btn-xs'
+							<td>&#8377; ${product.price}</td>
+							<td class="text-center"><a class='btn btn-warning btn-sm'
 								href="getUpdatePro?proId=${product.productId}"><span
-									class="glyphicon glyphicon-edit"></span>Update</a></td>
-							<td><a href="deleteProduct?proId=${product.productId}"
-								class="btn btn-danger btn-xs"><span
-									class="glyphicon glyphicon-remove"></span> Delete</a></td>
+									class="glyphicon glyphicon-pencil"></span></a></td>
+							<td class="text-center" ><a href="deleteProduct?proId=${product.productId}"
+								class="btn btn-danger btn-sm"><span
+									class="glyphicon glyphicon-remove"></span></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
