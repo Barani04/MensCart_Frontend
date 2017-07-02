@@ -44,7 +44,7 @@ public class ProductController {
 		model.addAttribute("isUserClickedProduct", "true");
 		model.addAttribute("title", "Product");
 
-		return "home";
+		return "admin";
 	}
 
 	@RequestMapping("getUpdatePro")
@@ -63,7 +63,7 @@ public class ProductController {
 		model.addAttribute("supdetail", supdetail);
 		model.addAttribute("catdetail", catdetail);
 		model.addAttribute("BeforeUpdate", "true");
-		return "home";
+		return "admin";
 	}
 
 	@RequestMapping("addpro")

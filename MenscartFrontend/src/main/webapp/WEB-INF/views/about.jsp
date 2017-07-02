@@ -18,7 +18,6 @@ body {
 	border-radius: 25px;
 	/* background: #42f498; */
 	color: #194da0;
-	font-style:italic oblique;
 	font-size:25px;
 	font-family: 'Dancing Script', cursive;
 	padding: 20px;

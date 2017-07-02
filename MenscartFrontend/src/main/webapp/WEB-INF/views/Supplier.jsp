@@ -41,7 +41,7 @@ body{padding-top: 70px;}
 			<form action="addsupp" method="post" class="form-horizontal">
 		</c:if>
 			<div style="margin-top: 50px;"
-				class="mainbox col-xs-6 col-xs-offset-3 col-sm-8 col-sm-offset-2">
+				class="mainbox col-xs-6 col-xs-offset-3">
 				<div class="panel panel-info">
 					<div class="panel-heading">
 						<div style="font-size: 25px; text-align: center;"
@@ -66,7 +66,7 @@ body{padding-top: 70px;}
 								<div class="col-xs-8">
 									<input type="text" name="supplierName"
 										value="${supplier.supplierName}" placeholder="Supplier Name"
-										class="form-control">
+										class="form-control" autofocus>
 								</div>
 							</div>
 							
@@ -121,7 +121,7 @@ body{padding-top: 70px;}
 							<td class="text-center"><a class='btn btn-warning btn-sm'
 								href="getUpdateSupplier?supId=${supplier.supplierId}"><span
 									class="glyphicon glyphicon-pencil"></span></a></td>
-							<td><a href="deleteSupplier?supId=${supplier.supplierId}"
+							<td class="text-center"><a href="deleteSupplier?supId=${supplier.supplierId}"
 								class="btn btn-danger btn-sm"><span
 									class="glyphicon glyphicon-remove"></span></a></td>
 						</tr>

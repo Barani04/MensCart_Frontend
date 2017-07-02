@@ -26,7 +26,7 @@ public class CategoryController {
 		model.addAttribute("isUserClickedCategory", "true");
 		model.addAttribute("title", "Category");
 		
-		return"home";
+		return"admin";
 	}
 	
 	@RequestMapping("getUpdateCat")
@@ -42,7 +42,7 @@ public class CategoryController {
 		model.addAttribute("category", cat);
 		model.addAttribute("Before", "true");
 		
-		return "home";
+		return "admin";
 	}
 	
 	@RequestMapping("updatecat")

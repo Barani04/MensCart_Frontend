@@ -25,7 +25,7 @@ public class SupplierController {
 		model.addAttribute("isUserClickedSupplier", true);
 		model.addAttribute("title", "Supplier");
 		
-		return "home";
+		return "admin";
 	}
 	
 	@RequestMapping("getUpdateSupplier")
@@ -41,7 +41,7 @@ public class SupplierController {
 		model.addAttribute("supplier",sup);
 		model.addAttribute("BeforeUpdateSup","true");
 		
-		return "home";
+		return "admin";
 	}
 	
 	@RequestMapping("deleteSupplier")

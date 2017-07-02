@@ -34,6 +34,8 @@ public class UserController {
 	
 	@Autowired
 	Role role;
+	
+	boolean loggedIn =true;
 
 	@RequestMapping("/login_success")
 	public String loginSuccess(HttpSession session) {
@@ -41,35 +43,30 @@ public class UserController {
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 
 		session.setAttribute("username", username);
+		session.setAttribute("loggedIn", loggedIn);
 
-		
+		System.out.println(username);
 		Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>) SecurityContextHolder.getContext()
 				.getAuthentication().getAuthorities();
 		
-		user= userdao.getByUserName(username);
+		for (GrantedAuthority grantedAuthority : authorities) {
+			
+			System.out.println(authorities);
+		}
+		
 		
 		role = roledao.getByUserName(username);
 		
-		String r = role.getRole();
-			System.out.println("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
 		for (GrantedAuthority role : authorities) {
-			System.out.println("byeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 			System.out.println("Role:" + role.getAuthority() + " User Name:" + username);
-			System.out.println("888888888888888888888888888888888");
-			if (r.equals("ROLE_ADMIN")) 
+			if ( role.getAuthority().equals("ROLE_ADMIN")) 
 			{
 				System.out.println("8111114546554");
 				page = "admin";
 			}
-			else if(r.equals("ROLE_USER"))  {
+			else  {
 				System.out.println("7777777777777777777777777777777");
 				page = "user";
-			}
-			
-			else
-			{
-				System.out.println("888888888888888888888888888");
-				System.out.println("Invalid Credidentials");
 			}
 		}
 
@@ -95,4 +92,13 @@ public class UserController {
 		return "login";
 
 	}
+	
+	/*@RequestMapping("forgotpwd")
+	public String forgotpwd(@ModelAttribute User user,Model model){
+		
+		
+		
+		
+		return "login";
+	}*/
 }

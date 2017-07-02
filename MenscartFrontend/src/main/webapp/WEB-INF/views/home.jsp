@@ -16,9 +16,6 @@ html,body{
 </style>
 </head>
 <body>
-	<!-- <header> <img src="resources/img/logo.png" /></header> -->
-	
-
 
 	<c:choose>
 		<c:when test="${isUserClickedlogin == 'true'}">
@@ -33,38 +30,9 @@ html,body{
 			<%@include file="/WEB-INF/views/contact.jsp"%>
 		</c:when>
 		
-		<c:when test="${isUserClickedProduct == 'true'}">
-			<%@include file="/WEB-INF/views/Product.jsp"%>
-		</c:when>
-		
-		<c:when test="${isUserClickedCategory == 'true'}">
-			<%@include file="/WEB-INF/views/Category.jsp"%>
-		</c:when>
-		
-		
-		<c:when test="${isUserClickedSupplier == 'true'}">
-			<%@include file="/WEB-INF/views/Supplier.jsp"%>
-		</c:when>
-		
 		<c:when test="${isUserClickedsignup == 'true'}">
 			<%@include file="/WEB-INF/views/signup.jsp"%>
 		</c:when>
-		
-		<c:when test="${BeforeUpdate == 'true'}">
-
-			<%@include file="/WEB-INF/views/Product.jsp"%>
-		</c:when>
-		
-		<c:when test="${BeforeUpdateSup == 'true'}">
-
-			<%@include file="/WEB-INF/views/Supplier.jsp"%>
-		</c:when>
-		
-		<c:when test="${Before == 'true'}">
-
-			<%@include file="/WEB-INF/views/Category.jsp"%>
-		</c:when>
-		
 		
 		<c:otherwise>
 			<%@ include file="carousel.jsp"%>

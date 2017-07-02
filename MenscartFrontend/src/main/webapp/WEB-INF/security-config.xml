@@ -16,9 +16,11 @@
 
 	<security:http auto-config="true" use-expressions="true">
 			<security:form-login login-page="/login" default-target-url="/"
-			login-processing-url="/perform_login" authentication-failure-url="/login"
+			login-processing-url="/perform_login" authentication-failure-url="/login?error"
 			authentication-success-forward-url="/login_success" 
 			username-parameter="userName" password-parameter="password"/>
+			
+			<security:logout logout-url="/logout" logout-success-url="/home"/>
 	<security:csrf disabled="true" />
 	</security:http>
 

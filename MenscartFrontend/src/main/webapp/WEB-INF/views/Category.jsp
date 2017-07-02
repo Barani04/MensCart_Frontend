@@ -43,7 +43,7 @@ body{padding-top: 70px;}
 		<div class="container">
 
 			<div style="margin-top: 50px;"
-				class="mainbox col-xs-6 col-xs-offset-3 col-sm-8 col-sm-offset-2">
+				class="mainbox col-xs-6 col-xs-offset-3">
 				<div class="panel panel-info">
 					<div class="panel-heading">
 						<div style="font-size: 25px; text-align: center;"
@@ -69,7 +69,7 @@ body{padding-top: 70px;}
 								Name:</label>
 							<div class="col-xs-8">
 								<input type="text" class="form-control" name="categoryName"
-									value="${category.categoryName}"placeholder="Category Name">
+									value="${category.categoryName}"placeholder="Category Name" autofocus>
 							</div>
 						</div>
 
