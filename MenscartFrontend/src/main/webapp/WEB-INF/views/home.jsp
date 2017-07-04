@@ -36,6 +36,11 @@ html,body{
 		
 		<c:otherwise>
 			<%@ include file="carousel.jsp"%>
+			<br>
+			<br>
+			<%@ include file="griddisplay.jsp"%>
+			
+			
 		</c:otherwise>
 		
 	</c:choose>

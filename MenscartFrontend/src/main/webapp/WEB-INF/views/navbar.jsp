@@ -60,14 +60,14 @@ nav a:hover {
 					<li id="Product"><a href="Product">Product</a></li>
 					<li id="Category"><a href="Category">Category</a></li>
 					<li id="Supplier"><a href="Supplier">Supplier</a></li>
-					<li style="font-family: 'Bellefair', serif; float: right;position: relative;"
+					<!-- <li style="font-family: 'Bellefair', serif; float: right;position: relative;"
 						class="pull-right" id="login"><a href="login"> <span
 							class="glyphicon glyphicon-log-in"></span> LogIn
 					</a></li>
 					
 					<li style="font-family: 'Bellefair', serif; float: right;position: relative;"
 						class="pull-right" id="signup"><a href="signup"><span
-							class="glyphicon glyphicon-user"></span> SignUp</a></li>
+							class="glyphicon glyphicon-user"></span> SignUp</a></li> -->
 							
 					<li style="font-family: 'Bellefair', serif; float: right;position: relative;"
 						class="pull-right"><a href="logout"><span

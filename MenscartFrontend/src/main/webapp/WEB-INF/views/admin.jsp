@@ -7,10 +7,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style>
+</style>
 </head>
 <body>
 	<c:choose>
-	
 		<c:when test="${isUserClickedProduct == 'true'}">
 			<%@include file="/WEB-INF/views/Product.jsp"%>
 		</c:when>
