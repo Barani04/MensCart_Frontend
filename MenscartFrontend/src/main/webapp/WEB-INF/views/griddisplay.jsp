@@ -17,6 +17,7 @@
 	border: 1px solid #b4f7b5;
 	border-radius: 10px;
 	margin: 10px 10px;
+
 }
 
 #f1_container1 {
