@@ -25,9 +25,9 @@
 }
 
 .des {
-	position: absolute;
-	margin-left: 20px;
-	border-left: 1px solid black;
+	position: absolute !important;
+	margin-left: 50px !important;
+	border-left: 1px solid black !important;
 }
 
 .proname {
@@ -35,49 +35,50 @@
 	padding-bottom: 0.5px;
 	font-family: 'Lucida Calligraphy';
 	font-weight: bold;
-	margin-left: 60px;
-	padding-right: 180px;
+	margin-left: 50px;
+	padding-right: 140px;
+	margin-top: 10px;
 }
 
 #prohr {
 	margin-top: 0.5px;
-	margin-left: 60px;
-	margin-right: 10px;
-	padding-right: 180px;
+	margin-left: 50px;
+	margin-right: 55px;
+	padding-right: 130px !important;
 }
 
 .sup {
 	color: #7169fc;
 	font-size: 18px;
-	margin-left: 60px;
-	padding-right: 180px;
+	margin-left: 50px;
+	padding-right: 140px;
 }
 
 .price {
 	color: green;
 	font-size: 20px;
-	margin-left: 60px;
-	padding-right: 180px;
+	margin-left: 50px;
+	padding-right: 140px;
 }
 
 #hrsec {
 	margin-top: 0.5px;
-	margin-left: 60px;
-	margin-right: 10px;
-	padding-right: 180px;
+	margin-left: 50px;
+	margin-right: 55px;
+	padding-right: 140px;
 }
 
 #prodes {
 	color: black;
 	font-size: 18px;
-	margin-left: 60px;
-	padding-right: 180px;
+	margin-left: 50px;
+	padding-right: 140px;
 }
 
 #msg {
 	font-size: 18px;
 	color: red;
-	margin-left: 60px;
+	margin-left: 50px;
 }
 
 #gly {

@@ -6,14 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+<script src="resources/js/jquery-3.2.1.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="resources/css/description.css">
-
 <title>Insert title here</title>
 <style type="text/css">
 .container12 {
@@ -24,7 +20,7 @@
 </style>
 </head>
 <body>
-	<div class="container12">
+	<div style="margin: 130px auto; width: auto; padding-left: 350px;">
 		<div class="row">
 			<div class="header1">
 
@@ -43,7 +39,7 @@
 						<p class="sup">seller:${supplier.supplierName}</p>
 						<p class="price">&#8377; ${proinfo.price}</p>
 						<hr id="hrsec" />
-						<p class="prodes">Description:</p><p style="padding-left:90px;">${proinfo.productDescription}</p>
+						<p class="prodes" style="margin-left: 60px !important;">Description:</p><p style="padding-left:90px;">${proinfo.productDescription}</p>
 						<p id="msg">Status : ${message}</p>
 						<form action="addToCart?proId=${proinfo.productId}" method="post">
 							<p style="margin-left: 60px;">
