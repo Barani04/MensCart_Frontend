@@ -1,6 +1,7 @@
 package com.niit.menskart_frontend.controllers;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -13,32 +14,36 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.niit.menscart_backend.DAO.ProductDAO;
 import com.niit.menscart_backend.DAO.RoleDAO;
 import com.niit.menscart_backend.DAO.UserDAO;
+import com.niit.menscart_backend.model.Product;
 import com.niit.menscart_backend.model.Role;
 import com.niit.menscart_backend.model.User;
 
 @Controller
 public class UserController {
-	
-	String page=null;
-	
+
+	String page = null;
+
 	@Autowired
 	UserDAO userdao;
-	
+
 	@Autowired
 	User user;
 	
 	@Autowired
+	ProductDAO prodao;
+	@Autowired
 	RoleDAO roledao;
-	
+
 	@Autowired
 	Role role;
-	
-	boolean loggedIn =true;
+
+	boolean loggedIn = true;
 
 	@RequestMapping("/login_success")
-	public String loginSuccess(HttpSession session) {
+	public String loginSuccess(HttpSession session, Model model) {
 		System.out.println("---Login Successful---");
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 
@@ -46,26 +51,20 @@ public class UserController {
 		session.setAttribute("loggedIn", loggedIn);
 
 		System.out.println(username);
+		@SuppressWarnings("unchecked")
 		Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>) SecurityContextHolder.getContext()
 				.getAuthentication().getAuthorities();
-		
-		for (GrantedAuthority grantedAuthority : authorities) {
-			
-			System.out.println(authorities);
-		}
-		
-		
+
 		role = roledao.getByUserName(username);
-		
+
 		for (GrantedAuthority role : authorities) {
 			System.out.println("Role:" + role.getAuthority() + " User Name:" + username);
-			if ( role.getAuthority().equals("ROLE_ADMIN")) 
-			{
-				System.out.println("8111114546554");
+			if (role.getAuthority().equals("ROLE_ADMIN")) {
 				page = "admin";
-			}
-			else  {
-				System.out.println("7777777777777777777777777777777");
+			} 
+			else {
+				List<Product> prodetail = prodao.list();
+				model.addAttribute("prodetail", prodetail);
 				page = "user";
 			}
 		}
@@ -75,30 +74,21 @@ public class UserController {
 
 	@RequestMapping("newUser")
 	public String signUp(@ModelAttribute User user, Model model) {
-		
+
 		user.setEnabled(true);
 		role.setRole("ROLE_USER");
 		role.setUserName(user.getUserName());
 		role.setContactNo(user.getContactNo());
 		role.setEmailId(user.getEmailId());
 		user.setEnabled(true);
-		
+
 		user.setRole(role);
 		role.setUser(user);
-		
-		
+
 		userdao.saveOrUpdate(user);
 		roledao.saveOrUpdate(role);
 		return "login";
 
 	}
-	
-	/*@RequestMapping("forgotpwd")
-	public String forgotpwd(@ModelAttribute User user,Model model){
-		
-		
-		
-		
-		return "login";
-	}*/
+
 }

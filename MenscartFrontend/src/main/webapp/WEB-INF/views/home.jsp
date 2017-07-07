@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="navbar.jsp"%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,7 +14,7 @@ html,body{
 </style>
 </head>
 <body>
-
+	<%@ include file="navbar.jsp"%>
 	<c:choose>
 		<c:when test="${isUserClickedlogin == 'true'}">
 			<%@include file="/WEB-INF/views/login.jsp"%>
@@ -33,14 +31,14 @@ html,body{
 		<c:when test="${isUserClickedsignup == 'true'}">
 			<%@include file="/WEB-INF/views/signup.jsp"%>
 		</c:when>
-		
+			<c:when test="${isUserClickedProductDes == 'true'}">
+				<%@ include file="productdescription.jsp" %>
+			</c:when>
 		<c:otherwise>
 			<%@ include file="carousel.jsp"%>
 			<br>
 			<br>
 			<%@ include file="griddisplay.jsp"%>
-			
-			
 		</c:otherwise>
 		
 	</c:choose>
