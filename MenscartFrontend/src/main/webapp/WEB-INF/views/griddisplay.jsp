@@ -89,7 +89,6 @@
 								<p class="proname">${product.productName}</p>
 								<p class="proprice">&#8377; ${product.price}</p>
 								<p><a href="productdescription?proId=${product.productId}"><button type="submit" class="btn btn-warning btn-md"><span class="glyphicon glyphicon-eye-open"></span>View</button></a></p>
-								<p><a href="#"><button type="submit" class="btn btn-success btn-md"><span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</button></a></p>
 							</div>
 						</div>
 					</div>

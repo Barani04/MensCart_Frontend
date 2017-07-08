@@ -48,7 +48,6 @@ public class UserController {
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 
 		session.setAttribute("username", username);
-		session.setAttribute("loggedIn", loggedIn);
 
 		System.out.println(username);
 		@SuppressWarnings("unchecked")
@@ -60,11 +59,15 @@ public class UserController {
 		for (GrantedAuthority role : authorities) {
 			System.out.println("Role:" + role.getAuthority() + " User Name:" + username);
 			if (role.getAuthority().equals("ROLE_ADMIN")) {
+				
+				session.setAttribute("adminLoggedIn",loggedIn);
 				page = "admin";
+				
 			} 
 			else {
-				List<Product> prodetail = prodao.list();
-				model.addAttribute("prodetail", prodetail);
+				session.setAttribute("userLoggedIn", loggedIn);
+					List<Product> prodetail = prodao.list();
+					model.addAttribute("prodetail", prodetail);
 				page = "user";
 			}
 		}

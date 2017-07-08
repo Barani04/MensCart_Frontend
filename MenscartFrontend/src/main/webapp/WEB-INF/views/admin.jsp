@@ -39,7 +39,9 @@
 
 			<%@include file="/WEB-INF/views/Category.jsp"%>
 		</c:when>
-	
+	<c:otherwise>
+		<marquee direction="left" style="margin: 100px; padding: 0px 100px;"><h2>Welcome...!Admin</h2></marquee>
+	</c:otherwise>
 	</c:choose>
 </body>
 </html>
