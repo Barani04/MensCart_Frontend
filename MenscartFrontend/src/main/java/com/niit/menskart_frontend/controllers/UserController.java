@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.niit.menscart_backend.DAO.ProductDAO;
 import com.niit.menscart_backend.DAO.RoleDAO;
+import com.niit.menscart_backend.DAO.ShipmentDAO;
 import com.niit.menscart_backend.DAO.UserDAO;
 import com.niit.menscart_backend.model.Product;
 import com.niit.menscart_backend.model.Role;
+import com.niit.menscart_backend.model.Shipment;
 import com.niit.menscart_backend.model.User;
 
 @Controller
@@ -31,7 +33,7 @@ public class UserController {
 
 	@Autowired
 	User user;
-	
+
 	@Autowired
 	ProductDAO prodao;
 	@Autowired
@@ -39,7 +41,8 @@ public class UserController {
 
 	@Autowired
 	Role role;
-
+	@Autowired
+	ShipmentDAO shipDAO;
 	boolean loggedIn = true;
 
 	@RequestMapping("/login_success")
@@ -59,15 +62,14 @@ public class UserController {
 		for (GrantedAuthority role : authorities) {
 			System.out.println("Role:" + role.getAuthority() + " User Name:" + username);
 			if (role.getAuthority().equals("ROLE_ADMIN")) {
-				
-				session.setAttribute("adminLoggedIn",loggedIn);
+
+				session.setAttribute("adminLoggedIn", loggedIn);
 				page = "admin";
-				
-			} 
-			else {
+
+			} else {
 				session.setAttribute("userLoggedIn", loggedIn);
-					List<Product> prodetail = prodao.list();
-					model.addAttribute("prodetail", prodetail);
+				List<Product> prodetail = prodao.list();
+				model.addAttribute("prodetail", prodetail);
 				page = "user";
 			}
 		}
@@ -76,20 +78,32 @@ public class UserController {
 	}
 
 	@RequestMapping("newUser")
-	public String signUp(@ModelAttribute User user, Model model) {
+	public String signUp(@ModelAttribute User user, @ModelAttribute Shipment shipment,Model model) {
 
-		user.setEnabled(true);
-		role.setRole("ROLE_USER");
-		role.setUserName(user.getUserName());
-		role.setContactNo(user.getContactNo());
-		role.setEmailId(user.getEmailId());
-		user.setEnabled(true);
+		String message;
 
-		user.setRole(role);
-		role.setUser(user);
+		if (userdao.isAllReadyRegister(user.getUserName(), true)) {
+			message = "Your user name is Alread registered you have to login";
 
-		userdao.saveOrUpdate(user);
-		roledao.saveOrUpdate(role);
+		} else {
+			user.setEnabled(true);
+			role.setRole("ROLE_USER");
+			role.setUserName(user.getUserName());
+			role.setContactNo(user.getContactNo());
+			role.setEmailId(user.getEmailId());
+			user.setEnabled(true);
+
+			user.setRole(role);
+			role.setUser(user);
+
+			userdao.saveOrUpdate(user);
+			roledao.saveOrUpdate(role);
+			
+			shipment.setUserId(user.getUserId());
+			shipDAO.saveOrUpdate(shipment);
+			message = "You have Successfully Registered";
+		}
+		model.addAttribute("message", message);
 		return "login";
 
 	}

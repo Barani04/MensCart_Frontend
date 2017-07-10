@@ -95,49 +95,7 @@ nav a:hover {
 					</li>
 					</c:if>
 			</ul>
-
-
-
-			<%-- <c:choose>
-				<c:when test="${adminLoggedIn}">
-					<ul class="nav navbar-nav">
-
-						<li id="Product"><a href="Product">Product</a></li>
-						<li id="Category"><a href="Category">Category</a></li>
-						<li id="Supplier"><a href="Supplier">Supplier</a></li>
-
-						<li><a>Welcome! ${username}</a></li>
-						<li
-							style="font-family: 'Bellefair', serif; float: right; position: relative;"
-							class="pull-right"><a href="logout"><span
-								class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
-					</ul>
-				</c:when>
-				<c:when test="${userLoggedIn}">
-					<ul class="nav navbar-nav">
-
-						<li id="About"><a href="About">About</a></li>
-
-						<li id="Contact"><a href="Contact">Contact</a></li>
-
-						<li id="History"><a href="#">History</a></li>
-						<li class="navbar-right"><a href="Cart"><span
-								class="fa fa-shopping-cart fa-lg"></span>Cart</a></li>
-					</ul>
-					<li><a>Welcome! ${username}</a></li>
-					<ul class="navbar-right">
-						<li
-							style="font-family: 'Bellefair', serif; float: right; position: relative;"
-							class="navbar-right" id="login"><a href="logout"> <span
-								class="glyphicon glyphicon-log-out"></span> LogOut
-						</a></li>
-					</ul>
-				</c:when>
-			</c:choose> --%>
-
-
-
-
+			
 		</div>
 	</div>
 	</nav>

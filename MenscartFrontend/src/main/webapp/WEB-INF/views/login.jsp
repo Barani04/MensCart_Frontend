@@ -21,10 +21,10 @@ body{padding-top: 70px;}
 				<div class="panel panel-info">
 					<div  class="panel-heading">
 						<div style="font-size: 25px;" class="panel-title">Sign In</div>
-						<div
+						<!-- <div
 							style="float: right; font-size: 80%; position: relative; top: -10px">
 							<a href="#">Forgot password?</a>
-						</div>
+						</div> -->
 					</div>
 
 					<div style="padding-top: 30px" class="panel-body">
@@ -48,13 +48,13 @@ body{padding-top: 70px;}
 
 
 
-						<div class="input-group">
+						<!-- <div class="input-group">
 							<div class="checkbox">
 								<label> <input id="login-remember" type="checkbox"
 									name="remember" value="1"> Remember me
 								</label>
 							</div>
-						</div>
+						</div> -->
 
 
 						<div class="form-group">
@@ -65,8 +65,6 @@ body{padding-top: 70px;}
 								</button>
 							</div>
 						</div>
-
-
 						<div class="form-group">
 							<div class="col-xs-12 control">
 								<div style="margin-top: 5px; height border-top: 1px solid #888; padding-top: 15px; font-size: 85%">

@@ -13,7 +13,7 @@
 
 <title>Insert title here</title>
 <style type="text/css">
-.cont{
+.cont {
 	margin-top: 100px;
 }
 </style>
@@ -21,8 +21,8 @@
 <body>
 	<div class="container cont">
 		<h3 align="center">Shopping Cart</h3>
-		<table class="table table-xs">
-			 <form action="updateCartItem?${cartitem.citemId}" />
+		<table class="table table-bordered table-xs">
+			<form action="updateCartItem?${cartitem.citemId}" />
 			<tr>
 				<th></th>
 				<th>Product</th>
@@ -32,21 +32,43 @@
 				<th class="text-center">Action</th>
 			</tr>
 			<c:forEach items="${cartitems}" var="cartitem">
-				<tr style="margin-top: 5px; margin-right: 20px;!important" class="item-row">
-					<td><img alt="${cartitem.productName}"
-						src="resources/images/${cartitem.productId}.jpg" width="80px"
-						; height="80px;"></td>
+				<tr style="margin-top: 5px; margin-right: 20px;!important"
+					class="item-row">
+					<td><a class="thumbnail"
+						href="productdescription?proId=${cartitem.productId}"><img
+							alt="${cartitem.productName}"
+							src="resources/images/${cartitem.productId}.jpg" width="80px"
+							; height="80px;"></a></td>
 					<td style="text-align: left;">${cartitem.productName}</td>
-					<td style="text-align: right;"><input type="number" name="quantity" value="${cartitem.qty}" style="width: 36px; text-align: center;" /></td>
+					<td style="text-align: right;">
+					<a href="decreaseQty?itemId=${cartitem.itemId}"><span class="glyphicon glyphicon-minus"> </span></a>
+					<input type="text" name="quantity" value="${cartitem.qty}" min="1" id="quantity" style="width: 36px; text-align: center;" />
+					<a href="increaseQty?itemId=${cartitem.itemId}"><span class="glyphicon glyphicon-plus"> </span></a>
+					</td>
 					<td style="text-align: right;">${cartitem.price}</td>
 					<td style="text-align: right;">${cartitem.price * cartitem.qty}</td>
-					<td><a href=""></a></td>
+					<td class="col-sm-1 col-md-1"><a
+						href="removeCart?itemId=${cartitem.itemId} "
+						class="btn btn-danger"> <span
+							class="glyphicon glyphicon-remove"></span> Remove
+					</a></td>
 				</tr>
 			</c:forEach>
 			<tr>
 				<td colspan="4" class="text-right" style="font-weight: bold;">Total</td>
 				<td style="text-align: right;">${grandtotal}</td>
-				<td></td>				
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="4" class="text-left"><a href="home"
+					class="btn btn-info"> <span
+						class="glyphicon glyphicon-shopping-cart"></span> Continue
+						Shopping
+				</a></td>
+				<td colspan="2" class="text-right"><a href="#"
+					class="btn btn-success"> checkout <span
+						class="glyphicon glyphicon-play"></span>
+				</a></td>
 			</tr>
 			</form>
 		</table>

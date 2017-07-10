@@ -41,23 +41,24 @@
 						<hr id="hrsec" />
 						<p class="prodes" style="margin-left: 60px !important;">Description:</p><p style="padding-left:90px;">${proinfo.productDescription}</p>
 						<p id="msg">Status : ${message}</p>
-							<c:if test="${pageContext.request.userPrincipal.name!=null}">
-						<form action="addToCart?proId=${proinfo.productId}" method="post">
-						</c:if>
-						<c:if test="${pageContext.request.userPrincipal.name == null}">
-						<form action="login" method="post">
-						</c:if>
+						<c:if test="${pageContext.request.userPrincipal.name!=null}">
 							<p style="margin-left: 60px;">
-								<input type="number" name="quantity" value="1" min="1"
-									style="width: 45px; text-align: center;">
-								<button class="btn btn-warning btn-md cart">
+								<a href="addToCart?proId=${proinfo.productId}" class="btn btn-warning btn-md cart">
 									<span class="glyphicon glyphicon-shopping-cart"></span>
 										Add to Cart
-								</button>
-							
-							
-								
+								</a>
 							</p>
+							</c:if>
+							<c:if test="${pageContext.request.userPrincipal.name == null}">
+								<p style="margin-left: 60px;">
+								<a href="login" class="btn btn-warning btn-lg cart">
+									<span class="glyphicon glyphicon-shopping-cart"></span>
+										Add to Cart
+								</a>
+								</p>
+							</c:if>							
+								
+							
 						</form>
 						
 					</td>
