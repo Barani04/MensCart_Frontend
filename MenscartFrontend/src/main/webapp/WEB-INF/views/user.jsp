@@ -6,16 +6,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="resources/css/description.css"> -->
 <title>Insert title here</title>
-
+<style type="text/css">
+body{
+	background: url(resources/img/background.jpg) !important ;
+	padding: 0px;
+}
+</style>
 </head>
 <body>
 <%@ include file="navbar.jsp"%>
@@ -23,8 +20,16 @@
 			<c:when test="${isUserClickedProductDes == 'true'}">
 				<%@ include file="productdescription.jsp" %>
 			</c:when>
+			<c:when test="${isUserClickedAdd == 'true'}">
+				<%@ include file="shippingaddress.jsp" %>
+			</c:when>
+			<c:when test="${isUserClickedViewShipAddress == 'true'}">
+				<%@ include file="viewShipAddress.jsp" %>
+			</c:when>
 			<c:otherwise>
-				<%@ include file="griddisplay.jsp"%>
+			<%@ include file="carousel.jsp"%>
+			<br>
+			<%@ include file="griddisplay.jsp"%>
 			</c:otherwise>
 		</c:choose>
 </body>

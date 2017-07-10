@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
-<title>Insert title here</title>
+<title>FashionFactory${title}</title>
 <style type="text/css">
 body {
 	padding-top: 70px;

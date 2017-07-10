@@ -65,7 +65,7 @@
 						class="glyphicon glyphicon-shopping-cart"></span> Continue
 						Shopping
 				</a></td>
-				<td colspan="2" class="text-right"><a href="#"
+				<td colspan="2" class="text-right"><a href="proceed"
 					class="btn btn-success"> checkout <span
 						class="glyphicon glyphicon-play"></span>
 				</a></td>

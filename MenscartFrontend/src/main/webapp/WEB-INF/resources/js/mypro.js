@@ -1,31 +1,31 @@
 $(function() {
 	
 	switch(menu){
-		case 'About Us':
+		case '-About Us':
 				$('#About').addClass('active');
 				break;
 				
-		case 'Contact Us':
+		case '-Contact Us':
 			$('#Contact').addClass('active');
 			break;
 			
-		case 'Log In':
+		case '-Log In':
 			$('#login').addClass('active');
 			break;
 			
-		case 'Sign Up':
+		case '-Sign Up':
 			$('#signup').addClass('active');
 			break;
 			
-		case 'Product':
+		case '-Product':
 			$('#Product').addClass('active');
 			break;
 			
-		case 'Category':
+		case '-Category':
 			$('#Category').addClass('active');
 			break;
 			
-		case 'Supplier':
+		case '-Supplier':
 			$('#Supplier').addClass('active');
 			break;
 			

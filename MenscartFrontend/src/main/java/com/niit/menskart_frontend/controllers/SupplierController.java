@@ -23,7 +23,7 @@ public class SupplierController {
 		List<com.niit.menscart_backend.model.Supplier> supdetail = supplierdao.list();
 		model.addAttribute("supdetail", supdetail);
 		model.addAttribute("isUserClickedSupplier", true);
-		model.addAttribute("title", "Supplier");
+		model.addAttribute("title", "-Supplier");
 		
 		return "admin";
 	}

@@ -1,6 +1,7 @@
 package com.niit.menskart_frontend.controllers;
 
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.http.HttpSession;
 
@@ -69,7 +70,7 @@ public class CartController {
 				System.out.println(qty);
 			} 
 			else {
-				/*cart.setCartId(1000+user.getUserId());*/
+				
 				cart.setEmailId(user.getEmailId());
 				cart.setProductId(proId);
 				cart.setQty(1);
@@ -82,7 +83,7 @@ public class CartController {
 				cart.setProductName(pro.getProductName());
 				cart.setPrice(pro.getPrice());
 				
-				cartdao.saveOrUpdate(cart);
+				cartdao.save(cart);
 
 				List<Cart> list = cartdao.getCartItems(username);
 				model.addAttribute("cartitems", list);

@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-<title>FashionFactory-${title}</title>
+<title>FashionFactory${title}</title>
 <style type="text/css">
 html, body {
 	background: url(resources/img/viewbac.jpg) !important;

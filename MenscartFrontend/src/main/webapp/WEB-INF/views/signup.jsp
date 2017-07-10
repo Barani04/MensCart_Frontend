@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+<title></title>
 <style type="text/css">
 body {
 	padding-top: 70px;
