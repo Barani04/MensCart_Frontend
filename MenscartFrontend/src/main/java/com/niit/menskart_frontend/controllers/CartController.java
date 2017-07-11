@@ -44,7 +44,7 @@ public class CartController {
 		model.addAttribute("supplier", supplier);
 		model.addAttribute("proinfo", pro);
 		model.addAttribute("isUserClickedProductDes", "true");
-		model.addAttribute("title", "prodetails");
+		model.addAttribute("title", "-prodetails");
 		return "user";
 	}
 
@@ -94,6 +94,7 @@ public class CartController {
 
 		prodao.saveOrUpdate(pro);
 		}
+		model.addAttribute("title", "-myCart");
 		return "redirect:myCart";
 	}
 
@@ -111,6 +112,7 @@ public class CartController {
 			grandtotal = grandtotal + (cart.getQty() * cart.getPrice());
 		}
 		model.addAttribute("grandtotal", grandtotal);
+		model.addAttribute("title", "-myCart");
 		return "cart";
 	}
 
@@ -122,7 +124,6 @@ public class CartController {
 		pro.setStock(pro.getStock()+cart.getQty());
 		prodao.saveOrUpdate(pro);
 		cartdao.deleteCartItem(cart);
-		
 		return "redirect:myCart";
 	}
 	
@@ -148,6 +149,18 @@ public class CartController {
 		cartdao.saveOrUpdate(cart);
 				
 		return "redirect:myCart";
+	}
+	
+	@RequestMapping("History")
+	public String Ordered(Model model, HttpSession session){
+		String username = (String) session.getAttribute("username");
+		System.out.println(username);
+
+		List<Cart> list = cartdao.getDispatchItems(username);
+		model.addAttribute("cartitems", list);
+		model.addAttribute("title", "-History");
+		model.addAttribute("isUserClickedHistory", true);
+		return "user";
 	}
 
 }

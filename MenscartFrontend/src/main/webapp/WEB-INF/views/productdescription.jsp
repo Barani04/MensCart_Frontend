@@ -10,7 +10,7 @@
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="resources/css/description.css">
-<title>Insert title here</title>
+<title>FashionFactory-prodetails</title>
 <style type="text/css">
 .container12 {
 	margin: 130px auto;

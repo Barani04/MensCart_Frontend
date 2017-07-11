@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css?family=Bellefair"
 	rel="stylesheet">
 
-<title>FashionFactory-${title}</title>
+<title>FashionFactory${title}</title>
 <script>
 	window.menu = '${title}'
 </script>
@@ -69,7 +69,7 @@ nav a:hover {
 					<li id="Supplier"><a href="Supplier">Supplier</a></li>
 				</c:if>
 				<c:if test="${userLoggedIn}">
-					<li id="History"><a href="#">History</a></li>
+					<li id="History"><a href="History">History</a></li>
 						
 				</c:if>
 				
@@ -83,7 +83,7 @@ nav a:hover {
 					</a></li>
 				</c:if>
 				<c:if test="${userLoggedIn}">
-					<li><a href="myCart"><span
+					<li id="cart"><a href="myCart"><span
 								class="fa fa-shopping-cart fa-lg " aria-hidden="true"></span>Cart</a></li>
 				</c:if>
 				<c:if test="${username == null}">
@@ -91,7 +91,7 @@ nav a:hover {
 					id="login"><a href="login"> <span
 						class="glyphicon glyphicon-log-in"></span> LogIn
 					</a></li>
-					<li style="font-family: 'Bellefair', serif;" id="login"><a
+					<li style="font-family: 'Bellefair', serif;" id="signup"><a
 						href="signup"> <span class="glyphicon glyphicon-user"></span>
 						Signup</a>
 					</li>

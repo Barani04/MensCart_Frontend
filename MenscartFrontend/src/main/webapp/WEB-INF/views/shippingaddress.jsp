@@ -37,7 +37,7 @@
 							<label class="col-xs-3 control-label">ShipId</label>
 							<div class="col-xs-9">
 								<input type="text" class="form-control"  value="${ship.shipmentId}"
-									name="shipmentId"  >
+									name="shipmentId" disabled="disabled" >
 							</div>
 						</div>
 						<div class="form-group">

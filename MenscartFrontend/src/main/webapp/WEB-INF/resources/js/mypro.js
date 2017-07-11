@@ -28,6 +28,13 @@ $(function() {
 		case '-Supplier':
 			$('#Supplier').addClass('active');
 			break;
+		case '-myCart':
+			$('#cart').addClass('active');
+			break;
+			
+		case '-ShippingAddress':
+			$('#ShippingAddress').addClass('active');
+			break;
 			
 		default:
 			$('#home').addClass('active');

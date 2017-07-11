@@ -90,6 +90,7 @@ public class ShippingController {
 				List<Shipment> shipdetail = shipdao.getByUserId(id);
 				model.addAttribute("shipdetail", shipdetail);
 				model.addAttribute("isUserClickedViewShipAddress", true);
+				model.addAttribute("title", "-ShippingAddress");
 				return"user";
 			}
 	}
@@ -128,7 +129,18 @@ public class ShippingController {
 				k.setShipmentId(shipmentId);
 				cartdao.saveOrUpdate(k);
 			}
-			
+			int subtotal = 0;
+
+			for (Cart c: kart) {
+				subtotal = subtotal + (c.getQty() * c.getPrice());
+			}
+			model.addAttribute("subtotal", subtotal);
+			Shipment ship = shipdao.getByShipmentId(shipmentId);
+			List<Shipment> shipdetail = shipdao.getByUserId(id);
+			model.addAttribute("shipdetail", shipdetail);
+			model.addAttribute("ship", ship);
+			model.addAttribute("kart", kart);
+			model.addAttribute("isUserClickedDeliver", true);
 		return "user";			
 		
 	}
@@ -143,4 +155,32 @@ public class ShippingController {
 		model.addAttribute("isUserClickedViewShipAddress", true);		
 		return "user";
 	}
+	
+	@RequestMapping("ThankYou")
+	public String thankYou(HttpSession session,Model model){
+		/*String username = (String) session.getAttribute("username");*/
+		model.addAttribute("isUserClickedThankYou", true);
+		return"user";
+	}
+	@RequestMapping("payment")
+	public String payment(@RequestParam("shipmentId") int shipmentId,HttpSession session,Model model){
+		String username = (String) session.getAttribute("username");
+		List<Cart> kart = cartdao.getCartItems(username);
+		for (Cart k : kart) { 
+			k.setStatus("Dispatched");
+			cartdao.saveOrUpdate(k);
+		}
+		int subtotal =0;
+		int tax=10;
+		
+		for (Cart c: kart) {
+			subtotal = subtotal + (c.getQty() * c.getPrice());
+		}
+		subtotal += tax; 
+		model.addAttribute("subtotal", subtotal);
+		model.addAttribute("isUserClickedPayment", true);
+		return"user";
+	}
+	
+	
 }

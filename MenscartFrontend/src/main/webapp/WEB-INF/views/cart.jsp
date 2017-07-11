@@ -16,12 +16,16 @@
 .cont {
 	margin-top: 100px;
 }
+body{
+	background: url(resources/img/background.jpg) !important ;
+	padding: 0px;
+}
 </style>
 </head>
 <body>
 	<div class="container cont">
 		<h3 align="center">Shopping Cart</h3>
-		<table class="table table-bordered table-xs">
+		<table class="table table-stripped table-xs">
 			<form action="updateCartItem?${cartitem.citemId}" />
 			<tr>
 				<th></th>

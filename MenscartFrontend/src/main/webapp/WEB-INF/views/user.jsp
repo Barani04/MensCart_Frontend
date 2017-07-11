@@ -26,8 +26,20 @@ body{
 			<c:when test="${isUserClickedViewShipAddress == 'true'}">
 				<%@ include file="viewShipAddress.jsp" %>
 			</c:when>
-			<c:when test="${isUserClickedCart == true}">
+			<c:when test="${isUserClickedCart == 'true'}">
 				<%@ include file="cart.jsp" %>
+			</c:when>
+			<c:when test="${isUserClickedDeliver == 'true'}">
+				<%@ include file="Receipt.jsp" %>
+			</c:when>
+			<c:when test="${isUserClickedThankYou == 'true'}">
+				<%@ include file="thankyou.jsp" %>
+			</c:when>
+			<c:when test="${isUserClickedPayment == 'true'}">
+				<%@ include file="payment.jsp" %>
+			</c:when>
+			<c:when test="${isUserClickedHistory == 'true'}">
+				<%@ include file="OrderPage.jsp" %>
 			</c:when>
 			<c:when test="${BeforeUpdate == 'true'}">
 

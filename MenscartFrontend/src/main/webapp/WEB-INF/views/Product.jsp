@@ -52,7 +52,7 @@ body{padding-top: 70px;}
 							<label class="col-xs-4 control-label">Product Id:</label>
 							<div class="col-xs-8">
 								<input type="text" class="form-control" name="productId"
-									value="${product.productId}" placeholder="Product Id">
+									value="${product.productId}" placeholder="Product Id" disabled="disabled">
 							</div>
 						</div>
 						</c:if>
