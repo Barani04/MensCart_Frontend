@@ -40,7 +40,12 @@
 						<p class="price">&#8377; ${proinfo.price}</p>
 						<hr id="hrsec" />
 						<p class="prodes" style="margin-left: 60px !important;">Description:</p><p style="padding-left:90px;">${proinfo.productDescription}</p>
-						<p id="msg">Status : ${message}</p>
+						<c:if test="${proinfo.stock>0}">
+							<p id="msg1">Available</p>
+						</c:if>
+						<c:if test="${proinfo.stock<=0}">
+							<p id="msg2">Out Of Stock</p>
+						</c:if>
 						<c:if test="${pageContext.request.userPrincipal.name!=null}">
 							<p style="margin-left: 60px;">
 								<a href="addToCart?proId=${proinfo.productId}" class="btn btn-warning btn-md cart">

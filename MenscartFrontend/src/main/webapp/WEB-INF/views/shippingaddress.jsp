@@ -18,7 +18,7 @@
 			class="form-horizontal">
 		</c:if>
 		<c:if test="${flag}">
-		<form action="updateAddress" method="post"
+		<form action="updateAdd" method="post"
 			class="form-horizontal">
 		</c:if>
 			<div style="margin-top: 50px;"
@@ -36,29 +36,43 @@
 						<div class="form-group">
 							<label class="col-xs-3 control-label">ShipId</label>
 							<div class="col-xs-9">
-								<input type="text" class="form-control" 
+								<input type="text" class="form-control"  value="${ship.shipmentId}"
 									name="shipmentId"  >
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-3 control-label">UserId</label>
+							<div class="col-xs-9">
+								<input type="text" class="form-control"  value="${ship.userId}"
+									name="userId" disabled="disabled" >
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-3 control-label">EmailId</label>
+							<div class="col-xs-9">
+								<input type="text" class="form-control"  value="${ship.emailId}"
+									name="emailId"  disabled="disabled">
 							</div>
 						</div>
 						</c:if>
 						<div class="form-group">
 							<label class="col-xs-3 control-label">Name</label>
 							<div class="col-xs-9">
-								<input type="text" class="form-control" 
+								<input type="text" class="form-control" value="${ship.userName}"
 									name="userName" placeholder="Enter Name" autofocus>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-xs-3 control-label">ContactNo</label>
 							<div class="col-xs-9">
-								<input type="text" class="form-control" 
+								<input type="text" class="form-control" value="${ship.contactNo }"
 									name="contactNo" placeholder="Enter phoneNumber">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-xs-3 control-label">Address</label>
 							<div class="col-xs-9">
-								<input type="address" class="form-control" 
+								<input type="address" class="form-control" value="${ship.address }"
 									name="address" placeholder="Enter Address">
 							</div>
 						</div>

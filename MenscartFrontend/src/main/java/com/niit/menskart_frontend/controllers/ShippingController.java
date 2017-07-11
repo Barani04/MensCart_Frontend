@@ -49,25 +49,32 @@ public class ShippingController {
 	public String getUpdateAdd(@RequestParam(value="shipmentId") int shipmentId,HttpSession session,Model model)
 	{
 		Shipment ship = shipdao.getByShipmentId(shipmentId);
-		List<Shipment> shipdetail = shipdao.list();
-		
+		String username = (String) session.getAttribute("username");
+		User user = userdao.getByUserName(username);
+		int id=user.getUserId();
+		List<Shipment> shipdetail = shipdao.getByUserId(id);
 		boolean flag = true;
 		model.addAttribute("flag", flag);
 		
 		model.addAttribute("shipdetail", shipdetail);
-		return "home";
+		model.addAttribute("ship", ship);
+		model.addAttribute("isUserClickedAdd", true);
+		model.addAttribute("BeforeUpdate", "true");
+		return "user";
 	}
 	@RequestMapping("updateAdd")
 	public String updateAdd(@ModelAttribute Shipment ship,HttpSession session,Model model){
+		
 		String username = (String) session.getAttribute("username");
 		User user = userdao.getByUserName(username);
-		boolean flag = false;
-		model.addAttribute("flag", flag);
-		shipdao.saveOrUpdate(ship);
 		int id=user.getUserId();
+		ship.setUserId(user.getUserId());
+		ship.setEmailId(user.getEmailId());
+		shipdao.saveOrUpdate(ship);	
 		List<Shipment> shipdetail = shipdao.getByUserId(id);
 		model.addAttribute("shipdetail", shipdetail);
-		return"redirect:viewShipAddress";
+		model.addAttribute("isUserClickedViewShipAddress", true);
+		return"user";
 	}	
 	
 	@RequestMapping("proceed")
@@ -75,10 +82,16 @@ public class ShippingController {
 		String username = (String) session.getAttribute("username");
 		User user = userdao.getByUserName(username);
 		int id=user.getUserId();
-		List<Shipment> shipdetail = shipdao.getByUserId(id);
-		model.addAttribute("shipdetail", shipdetail);
-		model.addAttribute("isUserClickedViewShipAddress", true);
-		return"user";
+		if(cartdao.getByUserName(username)==false){
+			
+			return "redirect:myCart";
+		}
+		else{
+				List<Shipment> shipdetail = shipdao.getByUserId(id);
+				model.addAttribute("shipdetail", shipdetail);
+				model.addAttribute("isUserClickedViewShipAddress", true);
+				return"user";
+			}
 	}
 	
 	@RequestMapping("addAddress")
@@ -116,8 +129,18 @@ public class ShippingController {
 				cartdao.saveOrUpdate(k);
 			}
 			
-		return "user";
-				
+		return "user";			
 		
+	}
+	@RequestMapping("deleteAdd")
+	public String deleteAdd(@RequestParam(value="shipmentId") int shipmentId,HttpSession session,Model model){
+		shipdao.delete(shipmentId);
+		String username = (String) session.getAttribute("username");
+		User user = userdao.getByUserName(username);
+		int id=user.getUserId();
+		List<Shipment> shipdetail = shipdao.getByUserId(id);
+		model.addAttribute("shipdetail", shipdetail);
+		model.addAttribute("isUserClickedViewShipAddress", true);		
+		return "user";
 	}
 }

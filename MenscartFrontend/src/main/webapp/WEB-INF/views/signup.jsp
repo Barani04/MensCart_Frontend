@@ -108,6 +108,7 @@ body {
 </head>
 <body>
 	<div class="container">
+	
 		<form action="newUser" method="post" onsubmit="return formRegister()"
 			class="form-horizontal">
 			<div style="margin-top: 50px;"
@@ -125,7 +126,7 @@ body {
 
 						<div style="display: none" id="login-alert"
 							class="alert alert-danger col-sm-12"></div>
-
+							
 						<div class="form-group">
 							<label class="col-xs-3 control-label">UserName</label>
 							<div class="col-xs-9">
@@ -193,5 +194,6 @@ body {
 			</div>
 		</form>
 	</div>
+
 </body>
 </html>

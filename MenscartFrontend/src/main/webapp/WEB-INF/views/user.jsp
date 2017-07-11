@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>FashionFactory${title}</title>
 <style type="text/css">
 body{
 	background: url(resources/img/background.jpg) !important ;
@@ -26,6 +26,13 @@ body{
 			<c:when test="${isUserClickedViewShipAddress == 'true'}">
 				<%@ include file="viewShipAddress.jsp" %>
 			</c:when>
+			<c:when test="${isUserClickedCart == true}">
+				<%@ include file="cart.jsp" %>
+			</c:when>
+			<c:when test="${BeforeUpdate == 'true'}">
+
+			<%@include file="/WEB-INF/views/shippingaddress.jsp"%>
+		</c:when>
 			<c:otherwise>
 			<%@ include file="carousel.jsp"%>
 			<br>

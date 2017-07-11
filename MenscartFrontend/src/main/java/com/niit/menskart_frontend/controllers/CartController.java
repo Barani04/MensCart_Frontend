@@ -39,20 +39,13 @@ public class CartController {
 
 	@RequestMapping("productdescription")
 	public String prodes(@RequestParam(value = "proId") int proId, Model model) {
-		String message;
 		Product pro = prodao.getProductId(proId);
-		if (pro.getStock() > 0) {
-			message = "Available";
-		} else {
-			message = "Out of Stock";
-		}
 		Supplier supplier = supdao.getBySupplierId(pro.getSupplierId());
 		model.addAttribute("supplier", supplier);
-		model.addAttribute("message", message);
 		model.addAttribute("proinfo", pro);
 		model.addAttribute("isUserClickedProductDes", "true");
 		model.addAttribute("title", "prodetails");
-		return "home";
+		return "user";
 	}
 
 	@RequestMapping("addToCart")
@@ -77,12 +70,12 @@ public class CartController {
 
 				cart.setStatus("N");
 				cart.setUserName(username);
-
+				
 				cart.setEmailId(user.getEmailId());
 				cart.setUserId(user.getUserId());
 				cart.setProductName(pro.getProductName());
 				cart.setPrice(pro.getPrice());
-				
+				cart.setTotal(cart.getQty() * cart.getPrice());
 				cartdao.save(cart);
 
 				List<Cart> list = cartdao.getCartItems(username);

@@ -84,6 +84,10 @@ public class UserController {
 
 		if (userdao.isAllReadyRegister(user.getUserName(), true)) {
 			message = "Your user name is Alread registered you have to login";
+			model.addAttribute("message", message);
+			model.addAttribute("isUserClickedsignup", "true");
+			model.addAttribute("title", "-Sign Up");
+			return "home";
 
 		} else {
 			user.setEnabled(true);
@@ -102,10 +106,12 @@ public class UserController {
 			shipment.setUserId(user.getUserId());
 			shipDAO.saveOrUpdate(shipment);
 			message = "You have Successfully Registered";
+			model.addAttribute("message", message);
+			model.addAttribute("isUserClickedlogin", "true");
+			model.addAttribute("title", "-Log In");
+			return "home";
 		}
-		model.addAttribute("message", message);
-		return "login";
-
+		
 	}
 
 }
