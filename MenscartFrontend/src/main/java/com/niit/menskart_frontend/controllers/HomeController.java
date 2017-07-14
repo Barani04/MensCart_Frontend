@@ -62,5 +62,12 @@ public class HomeController {
 		model.addAttribute("title", "-Sign Up");
 		return "home";
 	}
+	
+	@RequestMapping("admin")
+	public String adminPage(Model model){
+		
+		model.addAttribute("adminLoggedIn", "true");
+		return "admin";
+	}
 
 }

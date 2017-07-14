@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
+<script src="resources/js/validate.js"></script>
 <title>FashionFactory${title}</title>
 <style type="text/css">
 html, body {
@@ -35,10 +36,10 @@ body{padding-top: 70px;}
 	<div class="container">
 		
 		<c:if test="${flag}">
-			<form action="updatesupp" method="post" class="form-horizontal">
+			<form action="updatesupp" method="post" class="form-horizontal" onsubmit="return formSupplier()">
 		</c:if>
 		<c:if test="${!flag}">
-			<form action="addsupp" method="post" class="form-horizontal">
+			<form action="addsupp" method="post" class="form-horizontal" onsubmit="return formSupplier()">
 		</c:if>
 			<div style="margin-top: 50px;"
 				class="mainbox col-xs-6 col-xs-offset-3">
@@ -52,7 +53,7 @@ body{padding-top: 70px;}
 						<c:if test="${flag}">
 							<!--Form-group -->
 							<div class="form-group">
-								<label class="col-xs-4 control-label">Supplier Name:</label>
+								<label class="col-xs-4 control-label">Supplier Id:</label>
 								<div class="col-xs-8">
 									<input type="text" name="supplierId"
 										value="${supplier.supplierId}" placeholder="Supplier Id"
@@ -64,7 +65,7 @@ body{padding-top: 70px;}
 						<div class="form-group">
 								<label class="col-xs-4 control-label">Supplier Name:</label>
 								<div class="col-xs-8">
-									<input type="text" name="supplierName"
+									<input type="text" name="supplierName" id="supplierName"
 										value="${supplier.supplierName}" placeholder="Supplier Name"
 										class="form-control" autofocus>
 								</div>
@@ -73,7 +74,7 @@ body{padding-top: 70px;}
 							<div class="form-group">
 								<label class="col-xs-4 control-label">Contact:</label>
 								<div class="col-xs-8">
-									<input type="text" class="form-control" name="contactNo"
+									<input type="text" class="form-control" name="contactNo" id="contactNo"
 										value="${supplier.contactNo}" placeholder="Contact Number">
 								</div>
 							</div>
@@ -82,7 +83,7 @@ body{padding-top: 70px;}
 								<label class="col-xs-4 control-label">Address:</label>
 								<div class="col-xs-8">
 									<input name="address" type="text" value="${supplier.address}"
-										placeholder="Address" class="form-control input-xs">
+										placeholder="Address" id="address" class="form-control input-xs">
 								</div>
 							</div>
 

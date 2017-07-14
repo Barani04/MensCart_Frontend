@@ -28,7 +28,7 @@ $(function() {
 		case '-Supplier':
 			$('#Supplier').addClass('active');
 			break;
-		case '-myCart':
+		case 'myCart':
 			$('#cart').addClass('active');
 			break;
 			

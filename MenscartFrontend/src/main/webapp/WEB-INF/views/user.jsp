@@ -41,6 +41,9 @@ body{
 			<c:when test="${isUserClickedHistory == 'true'}">
 				<%@ include file="OrderPage.jsp" %>
 			</c:when>
+			<c:when test="${isUserClikedEmptyCart == 'true'}">
+				<%@ include file="EmptyCart.jsp" %>
+			</c:when>
 			<c:when test="${BeforeUpdate == 'true'}">
 
 			<%@include file="/WEB-INF/views/shippingaddress.jsp"%>

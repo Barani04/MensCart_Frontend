@@ -104,9 +104,7 @@ public class ProductController {
 
 	@RequestMapping("updatepro")
 	public String updatePro(@ModelAttribute Product pro, Model model) {
-
 		
-
 		prodao.saveOrUpdate(pro);
 
 		List<Product> prodetail = prodao.list();

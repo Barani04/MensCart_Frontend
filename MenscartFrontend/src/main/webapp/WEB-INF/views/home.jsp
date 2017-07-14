@@ -46,7 +46,9 @@ body{
 			<%@ include file="carousel.jsp"%>
 			<br>
 			<br>
-			<%@ include file="griddisplay.jsp"%>
+			<c:if test="${adminLoggedIn !='true' }">
+				<%@ include file="griddisplay.jsp"%>
+			</c:if>
 		</c:otherwise>
 		
 	</c:choose>

@@ -52,7 +52,12 @@ nav a:hover {
 					 <span class="icon-bar"></span>
 					 <span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="home" id="home">FashionFactory</a>
+			<c:if test="${adminLoggedIn !='true' }">
+				<a class="navbar-brand" href="home" id="home">FashionFactory</a>
+			</c:if>
+			<c:if test="${adminLoggedIn =='true' }">
+				<a class="navbar-brand" href="admin" id="home">FashionFactory</a>
+			</c:if>
 		</div>
 
 		<div class="collapse navbar-collapse"
@@ -84,7 +89,7 @@ nav a:hover {
 				</c:if>
 				<c:if test="${userLoggedIn}">
 					<li id="cart"><a href="myCart"><span
-								class="fa fa-shopping-cart fa-lg " aria-hidden="true"></span>Cart</a></li>
+								class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Cart</a></li>
 				</c:if>
 				<c:if test="${username == null}">
 					<li style="font-family: 'Bellefair', serif;" class="pull-right"

@@ -9,12 +9,10 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
+<script src="resources/js/validate.js"></script>
 <title>FashionFactory-${title}</title>
 <style type="text/css">
-html, body {
-	background: url(resources/img/viewbac.jpg) !important;
-	padding: 0px;
-}
+
 body{padding-top: 70px;}
 	.custab {
 	border: 1px solid #ccc;
@@ -33,10 +31,10 @@ body{padding-top: 70px;}
 <body>
 	<div class="container">
 		<c:if test="${flag}">
-			<form action="updatepro" method="post"  class="form-horizontal">
+			<form action="updatepro" method="post"  class="form-horizontal" onsubmit="return formProduct()">
 		</c:if>
 		<c:if test="${!flag}">
-			<form action="addpro" method="post" enctype="multipart/form-data" class="form-horizontal">
+			<form action="addpro" method="post" enctype="multipart/form-data" class="form-horizontal" onsubmit="return formProduct()">
 		</c:if>
 			<div style="margin-top: 50px;"
 				class="mainbox col-xs-6 col-xs-offset-3">
@@ -52,14 +50,14 @@ body{padding-top: 70px;}
 							<label class="col-xs-4 control-label">Product Id:</label>
 							<div class="col-xs-8">
 								<input type="text" class="form-control" name="productId"
-									value="${product.productId}" placeholder="Product Id" disabled="disabled">
+									value="${product.productId}" placeholder="Product Id" aria-hidden="true">
 							</div>
 						</div>
 						</c:if>
 						<div class="form-group">
 							<label class="col-xs-4 control-label">Product Name:</label>
 							<div class="col-xs-8">
-								<input type="text" class="form-control" name="productName"
+								<input type="text" class="form-control" name="productName" id="productName"
 									value="${product.productName}" placeholder="Product Name" autofocus> 
 							</div>
 						</div>
@@ -68,7 +66,7 @@ body{padding-top: 70px;}
 							<label class="col-xs-4 control-label">Product
 								Description:</label>
 							<div class="col-xs-8">
-								<input name="productDescription" type="text"
+								<input name="productDescription" type="text" id="productDescription"
 									value="${product.productDescription}"
 									placeholder="Product Descripton" class="form-control input-xs">
 							</div>
@@ -100,20 +98,21 @@ body{padding-top: 70px;}
 						</div>
 
 						<div class="form-group">
-							<label class="col-xs-4 control-label">Stock:</label>
-							<div class="col-xs-8">
-								<input type="text" class="form-control" name="stock"
-									value="${product.stock}" placeholder="Stock">
-							</div>
-						</div>
-
-						<div class="form-group">
 							<label class="col-xs-4 control-label">Price:</label>
 							<div class="col-xs-8">
-								<input type="text" class="form-control" name="price"
+								<input type="text" class="form-control" name="price" id="price"
 									value="${product.price}" placeholder="Price">
 							</div>
 						</div>
+						
+						<div class="form-group">
+							<label class="col-xs-4 control-label">Stock:</label>
+							<div class="col-xs-8">
+								<input type="text" class="form-control" name="stock" id="stock"
+									value="${product.stock}" placeholder="Stock">
+							</div>
+						</div>
+						
 					<c:if test="${!flag}">
 						<div class="form-group">
 							<label class="col-xs-4 control-label">Product Image:</label>

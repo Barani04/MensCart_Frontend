@@ -5,13 +5,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+<script src="resources/js/jquery-3.2.1.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
 <title>Invoice</title>
 </head>
 <style type="text/css">
@@ -23,7 +19,7 @@ body {
 
 	<div class="container">
 		<div class="row">
-		<c:forEach items="${kart}" var="cart">
+		
 			<div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
 				<div class="row">
 					<div class="col-xs-6 col-sm-6 col-md-6">
@@ -37,10 +33,10 @@ body {
 					</div>
 					<div class="col-xs-6 col-sm-6 col-md-6 text-right">
 						<p>
-							<em>${cart.date}</em>
+							<em>${date}</em>
 						</p>
 						<p>
-							<em>Receipt #:${cart.cartId}</em>
+							<em>Receipt #:${id}</em>
 						</p>
 					</div>
 				</div>
@@ -59,14 +55,14 @@ body {
 							</tr>
 						</thead>
 						<tbody>
-						
+							<c:forEach items="${kart}" var="cart">
 							<tr>
 								<td class="col-md-9"><em>${cart.productName}</em></td>
 								<td class="col-md-1" style="text-align: center">${cart.qty}</td>
 								<td class="col-md-1 text-center">&#8377;${cart.price}</td>
 								<td class="col-md-1 text-center">&#8377;${cart.total}</td>
 							</tr>
-						
+						</c:forEach>
 							<tr>
 								<td> </td>
 								<td> </td>
@@ -75,15 +71,15 @@ body {
 										<strong>SubTotal: </strong>
 									</p>
 									<p>
-										<strong>Tax: </strong>
+										<strong>DeliverCharge: </strong>
 									</p>
 								</td>
-								<td class="text-center">
+								<td class="text-right">
 									<p>
 										<strong>&#8377;${subtotal}</strong>
 									</p>
 									<p>
-										<strong>&#8377;10</strong>
+										<strong>&#8377;${deliver}</strong>
 									</p>
 								</td>
 							</tr>
@@ -93,17 +89,18 @@ body {
 								<td class="text-right"><h4>
 										<strong>Total: </strong>
 									</h4></td>
-								<td class="text-center text-danger"><h4>
-										<strong>&#8377;${subtotal+10}</strong>
+								<td class="text-right text-success"><h4>
+										<strong>&#8377;${subtotal + deliver}</strong>
 									</h4></td>
 							</tr>
 						</tbody>
 					</table>
-					</c:forEach>
+					
 					<a href="payment?shipmentId=${ship.shipmentId}" class="btn btn-success btn-lg btn-block">
 						Pay Now   <span class="glyphicon glyphicon-chevron-right"></span>
 					</a>
 				</div>
 			</div>
+		</div>
 </body>
 </html>

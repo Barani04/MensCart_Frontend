@@ -7,7 +7,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<style>
+<style type="text/css">
+	html, body {
+	background: url(resources/img/viewbac.jpg) !important;
+	padding: 0px;
+}
 </style>
 </head>
 <body>

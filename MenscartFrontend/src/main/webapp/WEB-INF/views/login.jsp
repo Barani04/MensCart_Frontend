@@ -15,16 +15,12 @@ body{padding-top: 70px;}
 </head>
 <body>
 	<div class="container">
-		<form action="perform_login" method="post"class="form-horizontal">
+		<form action="perform_login" method="post"class="form-horizontal" >
 			<div style="margin-top: 50px;"
 				class="mainbox col-xs-6 col-xs-offset-3">
 				<div class="panel panel-info">
 					<div  class="panel-heading">
 						<div style="font-size: 25px;" class="panel-title">Sign In</div>
-						<!-- <div
-							style="float: right; font-size: 80%; position: relative; top: -10px">
-							<a href="#">Forgot password?</a>
-						</div> -->
 					</div>
 
 					<div style="padding-top: 30px" class="panel-body">
@@ -34,28 +30,17 @@ body{padding-top: 70px;}
 
 						<div style="margin-bottom: 25px" class="input-group">
 							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-user"></i></span> <input id="login-username"
+								class="glyphicon glyphicon-user"></i></span> <input id="userName"
 								type="text" class="form-control" name="userName" value=""
 								placeholder="username or email" autofocus>
 						</div>
 
 						<div style="margin-bottom: 25px" class="input-group">
 							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-lock"></i></span> <input id="login-password"
+								class="glyphicon glyphicon-lock"></i></span> <input id="password"
 								type="password" class="form-control" name="password"
 								placeholder="password">
 						</div>
-
-
-
-						<!-- <div class="input-group">
-							<div class="checkbox">
-								<label> <input id="login-remember" type="checkbox"
-									name="remember" value="1"> Remember me
-								</label>
-							</div>
-						</div> -->
-
 
 						<div class="form-group">
 							<!-- Button -->

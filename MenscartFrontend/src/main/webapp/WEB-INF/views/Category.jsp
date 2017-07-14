@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
+<script src="resources/js/validate.js"></script>
 <title>FashionFactory-${title}</title>
 <style type="text/css">
 html, body {
@@ -34,11 +35,11 @@ body{padding-top: 70px;}
 </head>
 <body>
 	<c:if test="${flag}">
-			<form action="updatecat" method="post" class="form-horizontal">
+			<form action="updatecat" method="post" class="form-horizontal" onsubmit="return formCategory()">
 		</c:if>
 	
 	<c:if test="${!flag}">
-		<form action="addcat" method="post" class="form-horizontal">
+		<form action="addcat" method="post" class="form-horizontal" onsubmit="return formCategory()">
 	</c:if>
 		<div class="container">
 
@@ -68,7 +69,7 @@ body{padding-top: 70px;}
 							<label for="categoryName" class="col-xs-4 control-label">Category
 								Name:</label>
 							<div class="col-xs-8">
-								<input type="text" class="form-control" name="categoryName"
+								<input type="text" class="form-control" name="categoryName" id="categoryName"
 									value="${category.categoryName}"placeholder="Category Name" autofocus>
 							</div>
 						</div>
@@ -77,7 +78,7 @@ body{padding-top: 70px;}
 							<label for="description" class="col-xs-4 control-label">Category
 								Description:</label>
 							<div class="col-xs-8">
-								<input id="description" name="description" type="text"
+								<input id="description" name="description" type="text" id="description"
 									value="${category.description}"placeholder="Description" class="form-control input-xs">
 							</div>
 						</div>

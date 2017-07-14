@@ -4,24 +4,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+<script src="resources/js/jquery-3.2.1.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+
 	<title>Payment</title>
 	<style type="text/css">
 		.c1{margin-top: 100px;}
 		.panel-title {display: inline;font-weight: bold;}
 		.checkbox.pull-right { margin: 0; }
 		.pl-ziro { padding-left: 0px; }
-		#myDIV{margin-top: 20px;}
+		#myDIV{margin-top: 20px; display: none;}
 	</style>
 </head>
 <body>
 	<div class="container c1">
 		<a href="ThankYou" class="btn btn-success btn-default">Cash On Delivery</a>
-		<button onclick="myFunction()" class="btn btn-success btn-default">Card</button>
+		<a onclick="myFunction()" id="app" class="btn btn-success btn-default">Card</a>
 
 		<div id="myDIV">
   			<div class="row">
@@ -59,7 +58,7 @@
                             <div class="form-group">
                                 <label for="cvCode">
                                     CV CODE</label>
-                                <input type="password" class="form-control" id="cvCode" placeholder="CCV" required />
+                                <input type="password" class="form-control" id="password" placeholder="CCV" required />
                             </div>
                         </div>
                     </div>
@@ -79,7 +78,7 @@
 <script type="text/javascript">
 	function myFunction() {
     var x = document.getElementById('myDIV');
-    if (x.style.display === 'none') {
+    if (x.style.display == 'none') {
         x.style.display = 'block';
     } else {
         x.style.display = 'none';
