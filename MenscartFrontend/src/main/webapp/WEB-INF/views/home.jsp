@@ -19,6 +19,13 @@ body{
 	background: url(resources/img/background.jpg) !important ;
 	padding: 0px;
 }
+footer {
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10px;
+}
 </style>
 </head>
 <body>
@@ -52,7 +59,10 @@ body{
 		</c:otherwise>
 		
 	</c:choose>
-	
+	<hr/>
+	<div class="container-fluid">
+		<footer>&copy; 2017 fashionfactory.com</footer>
+	</div>
 	<script type="text/javascript" src="resources/js/mypro.js"></script>
 </body>
 </html>
