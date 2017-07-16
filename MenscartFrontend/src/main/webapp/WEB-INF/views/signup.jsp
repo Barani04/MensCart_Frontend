@@ -19,7 +19,7 @@ body {
 </head>
 <body>
 	<div class="container">
-	
+		
 		<form action="newUser" method="post" onsubmit="return formRegister()"
 			class="form-horizontal">
 			<div style="margin-top: 50px;"
@@ -42,7 +42,7 @@ body {
 								Name</label>
 							<div class="col-xs-9">
 								<input type="text" class="form-control" id="firstName"
-									name="firstName" placeholder="First Name">
+									name="firstName" placeholder="First Name" autofocus>
 							</div>
 						</div>
 						<div class="form-group">
@@ -57,7 +57,7 @@ body {
 							<label class="col-xs-3 control-label">UserName</label>
 							<div class="col-xs-9">
 								<input type="text" class="form-control" id="userName"
-									name="userName" placeholder="User Name" autofocus>
+									name="userName" placeholder="User Name" >
 							</div>
 						</div>
 

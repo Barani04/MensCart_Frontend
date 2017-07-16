@@ -93,7 +93,7 @@
 			password-parameter="password" />
 
 			
-			 <security:logout logout-success-url="/login" delete-cookies="JSESSIONID" />
+			 <security:logout logout-success-url="/login?logout" delete-cookies="JSESSIONID" />
 	<security:csrf disabled="true" />
 	</security:http>
 

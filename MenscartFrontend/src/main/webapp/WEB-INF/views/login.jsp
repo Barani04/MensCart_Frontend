@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,18 +9,27 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
+<script src="resources/js/validate.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
-body{padding-top: 70px;}
+body {
+	padding-top: 70px;
+}
 </style>
 </head>
 <body>
 	<div class="container">
-		<form action="perform_login" method="post"class="form-horizontal" >
+		<c:if test="${not empty error}">
+				<div class="col-lg-12 alert alert-danger alert-dismissable text-center"><b>${error}</b></div>
+	 			</c:if> 
+				<c:if test="${not empty logout}">
+			<div class="col-lg-12 alert alert-success text-center"><b>${logout}</b></div>
+				</c:if>			
+		<form action="perform_login" method="post" class="form-horizontal" >
 			<div style="margin-top: 50px;"
 				class="mainbox col-xs-6 col-xs-offset-3">
 				<div class="panel panel-info">
-					<div  class="panel-heading">
+					<div class="panel-heading">
 						<div style="font-size: 25px;" class="panel-title">Sign In</div>
 					</div>
 
@@ -41,18 +51,19 @@ body{padding-top: 70px;}
 								type="password" class="form-control" name="password"
 								placeholder="password">
 						</div>
-
+ 					
 						<div class="form-group">
 							<!-- Button -->
 							<div class="col-xs-offset-5 col-xs-2 col-xs-offset-5">
-								<button  type="submit" class="btn btn-info">
+								<button type="submit" class="btn btn-info">
 									<span class="icon-hand-right"></span> Log In
 								</button>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-xs-12 control">
-								<div style="margin-top: 5px; height border-top: 1px solid #888; padding-top: 15px; font-size: 85%">
+								<div
+									style="margin-top: 5px; height border-top: 1px solid #888; padding-top: 15px; font-size: 85%">
 									Don't have an account! <a href="signup"> Sign Up Here </a>
 								</div>
 							</div>
@@ -62,5 +73,13 @@ body{padding-top: 70px;}
 			</div>
 		</form>
 	</div>
+<script type="text/javascript">
+	var $alert = $('.alert');
+	if($alert.length){
+		setTimeout(function(){
+			$alert.fadeOut('slow');
+		},4000)
+	}
+</script>
 </body>
 </html>

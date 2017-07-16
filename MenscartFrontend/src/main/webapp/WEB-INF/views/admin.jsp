@@ -12,13 +12,7 @@
 	background: url(resources/img/viewbac.jpg) !important;
 	padding: 0px;
 }
-footer {
-    position: relative;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 10px;
-}
+
 </style>
 </head>
 <body>
@@ -54,8 +48,5 @@ footer {
 		<marquee direction="left" style="margin: 100px; padding: 0px 100px;"><h2>Welcome...!Admin</h2></marquee>
 	</c:otherwise>
 	</c:choose>
-	<div class="container-fluid">
-		<footer>&copy; 2017 fashionfactory.com</footer>
-	</div>
 </body>
 </html>

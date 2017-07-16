@@ -65,6 +65,16 @@ function formCategory() {
 	return false;
 }
 
+/*function formLogin(){
+	var username = document.getElementById('userName');
+	var password = document.getElementById('password');
+	if(notEmpty(username)&&notEmpty(password)){
+		return true;
+	}
+	alert("Invalid User Credentials....!");
+	return false;
+}*/
+
 function formSupplier() {
 	// Make quick references to our fields
 

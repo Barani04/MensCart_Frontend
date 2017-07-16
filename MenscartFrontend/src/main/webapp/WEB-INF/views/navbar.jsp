@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,7 +10,8 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Bellefair"
 	rel="stylesheet">
 
@@ -46,18 +49,19 @@ nav a:hover {
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
 				data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span> 
-				<span class="icon-bar"></span> 
-					<span class="icon-bar"></span>
-					 <span class="icon-bar"></span>
-					 <span class="icon-bar"></span>
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span>
 			</button>
-			<c:if test="${adminLoggedIn !='true' }">
+			<security:authorize access="isAnonymous() ">
 				<a class="navbar-brand" href="home" id="home">FashionFactory</a>
-			</c:if>
-			<c:if test="${adminLoggedIn =='true' }">
+			</security:authorize>
+			<security:authorize access="hasRole('ROLE_USER')">
+				<a class="navbar-brand" href="home" id="home">FashionFactory</a>
+			</security:authorize>
+			<security:authorize access="hasRole('ROLE_ADMIN')">				
 				<a class="navbar-brand" href="admin" id="home">FashionFactory</a>
-			</c:if>
+			</security:authorize>
 		</div>
 
 		<div class="collapse navbar-collapse"
@@ -68,41 +72,42 @@ nav a:hover {
 				<li id="About"><a href="About">About</a></li>
 
 				<li id="Contact"><a href="Contact">Contact</a></li>
-				<c:if test="${adminLoggedIn}">
-					<li id="Product"><a href="Product">Product</a></li>
-					<li id="Category"><a href="Category">Category</a></li>
-					<li id="Supplier"><a href="Supplier">Supplier</a></li>
-				</c:if>
-				<c:if test="${userLoggedIn}">
-					<li id="History"><a href="History">History</a></li>
-						
-				</c:if>
+					<security:authorize access="hasRole('ROLE_ADMIN')">	
+						<li id="Product"><a href="Product">Product</a></li>
+						<li id="Category"><a href="Category">Category</a></li>
+					 	<li id="Supplier"><a href="Supplier">Supplier</a></li>
+					</security:authorize>
+					<security:authorize access="hasRole('ROLE_USER')">
+						<li id="History"><a href="History">History</a></li>
+					</security:authorize>
 				
+
 			</ul>
 			<ul class="nav navbar-right navbar-nav">
-				<c:if test="${username != null}">
-					<li><a>Welcome! ${username}</a></li>
-						<li style="font-family: 'Bellefair', serif;" class="pull-right"
-						id="login"><a href="logout"> <span
-						class="glyphicon glyphicon-log-out"></span> LogOut
-					</a></li>
-				</c:if>
-				<c:if test="${userLoggedIn}">
-					<li id="cart"><a href="myCart"><span
-								class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Cart</a></li>
-				</c:if>
-				<c:if test="${username == null}">
+				<security:authorize access="isAnonymous()">
 					<li style="font-family: 'Bellefair', serif;" class="pull-right"
-					id="login"><a href="login"> <span
-						class="glyphicon glyphicon-log-in"></span> LogIn
+						id="login"><a href="login"> <span
+							class="glyphicon glyphicon-log-in"></span> LogIn
 					</a></li>
 					<li style="font-family: 'Bellefair', serif;" id="signup"><a
 						href="signup"> <span class="glyphicon glyphicon-user"></span>
-						Signup</a>
-					</li>
-					</c:if>
+							Signup
+					</a></li>
+				</security:authorize>
+				<security:authorize access="isAuthenticated()">
+					<li><a>Welcome! ${username}</a></li>
+					<li style="font-family: 'Bellefair', serif;" class="pull-right"
+						id="login"><a href="logout"> <span
+							class="glyphicon glyphicon-log-out"></span> LogOut
+					</a></li>
+					<security:authorize access="hasRole('ROLE_USER')">
+						<li id="cart"><a href="myCart"><span
+								class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Cart</a>
+						</li>
+					</security:authorize>
+				</security:authorize>
 			</ul>
-			
+
 		</div>
 	</div>
 	</nav>

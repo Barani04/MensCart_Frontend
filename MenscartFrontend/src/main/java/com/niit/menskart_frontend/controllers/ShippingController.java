@@ -130,8 +130,12 @@ public class ShippingController {
 			List<Cart> kart = cartdao.getCartItems(username);
 			Date date= kart.get(0).getCuDate();
 			for (Cart k : kart) {
-			
-				k.setCartId(id); 
+				if(k.getCartId()!=0){
+					k.setCartId(k.getCartId());
+				}
+				else{
+						k.setCartId(id); 
+				}
 				k.setShipmentId(shipmentId);
 				
 				cartdao.saveOrUpdate(k);

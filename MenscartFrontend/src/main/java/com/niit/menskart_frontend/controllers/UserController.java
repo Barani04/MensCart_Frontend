@@ -66,11 +66,16 @@ public class UserController {
 				session.setAttribute("adminLoggedIn", loggedIn);
 				page = "admin";
 
-			} else {
+			} else if(role.getAuthority().equals("ROLE_USER")){
 				session.setAttribute("userLoggedIn", loggedIn);
 				List<Product> prodetail = prodao.list();
 				model.addAttribute("prodetail", prodetail);
 				page = "user";
+			}
+			else{
+				model.addAttribute("message", "Invalid Credentials......!");
+				model.addAttribute("isUserClickedlogin", "true");
+				page ="redirect:login";
 			}
 		}
 
@@ -102,8 +107,8 @@ public class UserController {
 			
 			shipment.setUserId(user.getUserId());
 			shipDAO.saveOrUpdate(shipment);
-			model.addAttribute("isUserClickedlogin", "true");
-			model.addAttribute("title", "-Log In");
+			model.addAttribute("message", "User Added Successfully...!");
+			model.addAttribute("title", "-SignUp");
 			return "home";
 		}
 		
