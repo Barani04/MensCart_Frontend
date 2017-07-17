@@ -130,8 +130,10 @@ public class ShippingController {
 			List<Cart> kart = cartdao.getCartItems(username);
 			Date date= kart.get(0).getCuDate();
 			for (Cart k : kart) {
-				if(k.getCartId()!=0){
-					k.setCartId(k.getCartId());
+				int cid=k.getCartId();
+				if(cid>0){
+					
+					k.setCartId(cid);
 				}
 				else{
 						k.setCartId(id); 
@@ -149,7 +151,8 @@ public class ShippingController {
 			{
 				deliver = 0;
 			}
-			model.addAttribute("id", id);
+			int rid = kart.get(0).getCartId();
+			model.addAttribute("rid", rid);
 			model.addAttribute("subtotal", subtotal);
 			model.addAttribute("deliver", deliver);
 			Shipment ship = shipdao.getByShipmentId(shipmentId);

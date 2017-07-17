@@ -36,7 +36,7 @@ body {
 							<em>${date}</em>
 						</p>
 						<p>
-							<em>Receipt #:${id}</em>
+							<em>Receipt #:${rid}</em>
 						</p>
 					</div>
 				</div>
