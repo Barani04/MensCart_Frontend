@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-<title>FashionFactory${title}</title>
+<title>FashionFactory-user</title>
 <style type="text/css">
 body{
 	background: url(resources/img/background.jpg) !important ;
@@ -58,6 +58,5 @@ body{
 			<%@ include file="griddisplay.jsp"%>
 			</c:otherwise>
 		</c:choose>
-	<script type="text/javascript" src="resources/js/mypro.js"></script>
 </body>
 </html>

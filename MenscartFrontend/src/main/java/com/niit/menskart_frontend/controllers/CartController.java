@@ -37,6 +37,7 @@ public class CartController {
 	@Autowired
 	UserDAO userDAO;
 
+	
 	@RequestMapping("productdescription")
 	public String prodes(@RequestParam(value = "proId") int proId, Model model) {
 		Product pro = prodao.getProductId(proId);
@@ -199,6 +200,33 @@ public class CartController {
 		//model.addAttribute("title", "-History");
 		model.addAttribute("isUserClickedHistory", true);
 		return "user";
+	}
+	
+	@RequestMapping("adminCart")
+	public String adminCart(Model model){
+		List<Cart> list = cartdao.getAllItems();
+		for (Cart c : list) {
+			java.util.Date d2= c.getdDate();
+			try
+			{
+				Date date= new Date();
+				long diff = d2.getTime() - date.getTime();
+				int diffDays = (int) (diff / (24 * 60 * 60 * 1000));
+				if(diffDays<-2)
+				{
+					c.setDays(-2);
+				}
+				else{
+					c.setDays(diffDays);
+				}
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		model.addAttribute("cartitems", list);
+		model.addAttribute("isUserClickedadminCart", true);
+		return "admin";
 	}
 
 }

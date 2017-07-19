@@ -58,6 +58,11 @@ nav a:hover {
 				<security:authorize access="hasRole('ROLE_USER')">
 					<li id="History"><a href="History">History</a></li>
 				</security:authorize>
+				<security:authorize access="hasRole('ROLE_ADMIN')">
+						<li id="cart"><a href="adminCart"><span
+								class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Cart</a>
+						</li>
+					</security:authorize>
 
 
 			</ul>

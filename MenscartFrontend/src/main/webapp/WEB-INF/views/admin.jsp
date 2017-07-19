@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+<title>FashionFactory-admin</title>
 <style type="text/css">
 	html, body {
 	background: url(resources/img/viewbac.jpg) !important;
@@ -29,6 +29,9 @@
 			<%@include file="/WEB-INF/views/Category.jsp"%>
 		</c:when>
 		
+		<c:when test="${isUserClickedadminCart == 'true'}">
+			<%@include file="/WEB-INF/views/adminkart.jsp"%>
+		</c:when>
 		
 		<c:when test="${isUserClickedSupplier == 'true'}">
 			<%@include file="/WEB-INF/views/Supplier.jsp"%>

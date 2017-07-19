@@ -184,15 +184,26 @@ public class ShippingController {
 		String username = (String) session.getAttribute("username");
 		List<Cart> kart = cartdao.getCartItems(username);
 		Random random = new Random();
-		int day = 2+ random.nextInt(6);
+		int day = 3+ random.nextInt(6);
 		Calendar cal = Calendar.getInstance();
 		Date date= kart.get(0).getCuDate();
 		cal.setTime(date);
-		
 		cal.add(Calendar.DATE,day);		
 		for (Cart k : kart) { 
+			
 			k.setStatus("Dispatched");
 			k.setdDate(cal.getTime());
+			Date d2 = k.getdDate();
+			try
+			{
+				Date currentDate= new Date();
+				long diff = d2.getTime() - currentDate.getTime();
+				int diffDays = (int) (diff / (24 * 60 * 60 * 1000));
+				k.setDays(diffDays);
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}
 			cartdao.saveOrUpdate(k);
 		}
 		String delDate = sdf.format(kart.get(0).getdDate());
