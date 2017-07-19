@@ -211,6 +211,10 @@ public class ShippingController {
 			subtotal = subtotal + (c.getQty() * c.getPrice());
 			id = c.getCartId();
 		}
+		if(subtotal<1000)
+		{
+			subtotal = subtotal+50;
+		}
 		model.addAttribute("id", id);
 		model.addAttribute("subtotal", subtotal);
 		model.addAttribute("isUserClickedPayment", true);

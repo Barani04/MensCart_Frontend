@@ -1,16 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="resources/css/bootstrap.min.css">
-<script src="resources/js/jquery-3.2.1.min.js"></script>
-<script src="resources/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
-
 <style type="text/css">
 .container1 {
 	background: transparent;
@@ -23,7 +11,6 @@
 #f1_container1 {
 	position: relative;
 	width: 250px;
-	margin-top: 10px;
 	margin-bottom: 10px;
 	margin-left: 10px;
 	height: 300px;
@@ -53,7 +40,6 @@
 	height: 100%;
 	backface-visibility: hidden;
 }
-
 .face.back {
 	display: block;
 	transform: rotateY(180deg);
@@ -73,9 +59,10 @@
 	font-size: 18px;
 	margin-top: 60px;
 }
+.row{
+	margin: 10px 10px; 
+}
 </style>	
-</head>
-<body>
 	<div class="container1">
 		<div class="row">
 			<c:forEach items="${prodetail}" var="product">
@@ -96,5 +83,3 @@
 			</c:forEach>
 		</div>
 	</div>
-</body>
-</html>

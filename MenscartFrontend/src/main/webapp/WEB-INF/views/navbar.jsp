@@ -1,25 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="security"
 	uri="http://www.springframework.org/security/tags"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="resources/css/bootstrap.min.css">
-<script src="resources/js/jquery-3.2.1.min.js"></script>
-<script src="resources/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Bellefair"
-	rel="stylesheet">
-
-<title>FashionFactory${title}</title>
-<script>
-	window.menu = '${title}'
-</script>
-
 <style type="text/css">
 li a {
 	height: 50px;
@@ -42,9 +22,7 @@ nav a:hover {
 	color: #2d2b2b !important;
 }
 </style>
-</head>
-<body>
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -59,7 +37,7 @@ nav a:hover {
 			<security:authorize access="hasRole('ROLE_USER')">
 				<a class="navbar-brand" href="home" id="home">FashionFactory</a>
 			</security:authorize>
-			<security:authorize access="hasRole('ROLE_ADMIN')">				
+			<security:authorize access="hasRole('ROLE_ADMIN')">
 				<a class="navbar-brand" href="admin" id="home">FashionFactory</a>
 			</security:authorize>
 		</div>
@@ -72,15 +50,15 @@ nav a:hover {
 				<li id="About"><a href="About">About</a></li>
 
 				<li id="Contact"><a href="Contact">Contact</a></li>
-					<security:authorize access="hasRole('ROLE_ADMIN')">	
-						<li id="Product"><a href="Product">Product</a></li>
-						<li id="Category"><a href="Category">Category</a></li>
-					 	<li id="Supplier"><a href="Supplier">Supplier</a></li>
-					</security:authorize>
-					<security:authorize access="hasRole('ROLE_USER')">
-						<li id="History"><a href="History">History</a></li>
-					</security:authorize>
-				
+				<security:authorize access="hasRole('ROLE_ADMIN')">
+					<li id="Product"><a href="Product">Product</a></li>
+					<li id="Category"><a href="Category">Category</a></li>
+					<li id="Supplier"><a href="Supplier">Supplier</a></li>
+				</security:authorize>
+				<security:authorize access="hasRole('ROLE_USER')">
+					<li id="History"><a href="History">History</a></li>
+				</security:authorize>
+
 
 			</ul>
 			<ul class="nav navbar-right navbar-nav">
@@ -110,6 +88,4 @@ nav a:hover {
 
 		</div>
 	</div>
-	</nav>
-</body>
-</html>
+</nav>
