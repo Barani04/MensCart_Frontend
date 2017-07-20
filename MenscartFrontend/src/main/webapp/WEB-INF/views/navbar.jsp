@@ -60,7 +60,7 @@ nav a:hover {
 				</security:authorize>
 				<security:authorize access="hasRole('ROLE_ADMIN')">
 						<li id="cart"><a href="adminCart"><span
-								class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Cart</a>
+								class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Orders</a>
 						</li>
 					</security:authorize>
 

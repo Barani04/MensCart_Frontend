@@ -49,8 +49,8 @@ body{
 					<input type="text" name="quantity" value="${cartitem.qty}" min="1" id="quantity" style="width: 36px; text-align: center;" />
 					<a href="increaseQty?itemId=${cartitem.itemId}"><span class="glyphicon glyphicon-plus"> </span></a>
 					</td>
-					<td style="text-align: right;">${cartitem.price}</td>
-					<td style="text-align: right;">${cartitem.price * cartitem.qty}</td>
+					<td style="text-align: right;">&#8377;${cartitem.price}</td>
+					<td style="text-align: right;">&#8377;${cartitem.price * cartitem.qty}</td>
 					<td class="col-sm-1 col-md-1"><a
 						href="removeCart?itemId=${cartitem.itemId} "
 						class="btn btn-danger"> <span
@@ -60,7 +60,7 @@ body{
 			</c:forEach>
 			<tr>
 				<td colspan="4" class="text-right" style="font-weight: bold;">Total</td>
-				<td style="text-align: right;">${grandtotal}</td>
+				<td style="text-align: right;">&#8377;${grandtotal}</td>
 				<td></td>
 			</tr>
 			<tr>

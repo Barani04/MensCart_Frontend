@@ -28,10 +28,10 @@
 				<td style="text-align: left;">${cartitem.productName}</td>
 				<td style="text-align: left;">${cartitem.cuDate}</td>
 				<td style="text-align: left;">${cartitem.qty}</td>
-				<td style="text-align: left;">${cartitem.price}</td>
-				<td style="text-align: left;">${cartitem.total}</td>
+				<td style="text-align: left;">&#8377;${cartitem.price}</td>
+				<td style="text-align: left;">&#8377;${cartitem.total}</td>
 				<td style="text-align: left;">${cartitem.dDate}</td>				
-				<c:if test="${cartitem.days>=4}">
+				<c:if test="${cartitem.days>=3}">
 					<td style="text-align: left; color:#ff9000;">Shipped</td>
 				</c:if>
 				<c:if test="${cartitem.days==-1}">
@@ -40,7 +40,7 @@
 				<c:if test="${cartitem.days<-1}">
 					<td style="text-align: left; color:#06e20a;">Delivered</td>
 				</c:if>
-				<c:if test="${cartitem.days>=0 && cartitem.days<=3}">
+				<c:if test="${cartitem.days>=0 && cartitem.days<=2}">
 					<td style="text-align: left; color:#3e0cf4;">In Transit</td>
 				</c:if>
 			</tr>

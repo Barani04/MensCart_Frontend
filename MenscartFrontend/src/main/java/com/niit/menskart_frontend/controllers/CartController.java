@@ -219,6 +219,7 @@ public class CartController {
 				else{
 					c.setDays(diffDays);
 				}
+				cartdao.saveOrUpdate(c);
 			}
 			catch (Exception e) {
 				e.printStackTrace();

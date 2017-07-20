@@ -21,15 +21,15 @@
 					<td></td>
 					<td style="text-align: left;">${cartitem.productName}</td>
 					<td style="text-align: right;">${cartitem.qty}</td>				
-					<td style="text-align: right;">${cartitem.price}</td>
-					<td style="text-align: right;">${cartitem.price * cartitem.qty}</td>
+					<td style="text-align: right;">&#8377;${cartitem.price}</td>
+					<td style="text-align: right;">&#8377;${cartitem.price * cartitem.qty}</td>
 					<c:if test="${cartitem.days==-1}">
 						<td style="text-align: right; color:#06e20a;">Out for Delivery</td>
 					</c:if>
 					<c:if test="${cartitem.days<-1}">
 						<td style="text-align: right; color:#06e20a;">Delivered</td>
 					</c:if>
-					<c:if test="${cartitem.days>=0}">
+					<c:if test="${cartitem.days>=0 && cartitem.days<=2}">
 						<td style="text-align: right; color:#3e0cf4;">In Transit</td>
 					</c:if>
 

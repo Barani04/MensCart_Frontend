@@ -11,7 +11,7 @@
 <script src="resources/js/bootstrap.min.js"></script>
 <title>FashionFactory-admin</title>
 <style type="text/css">
-	html, body {
+ body {
 	background: url(resources/img/viewbac.jpg) !important;
 	padding: 0px;
 }

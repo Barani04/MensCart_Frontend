@@ -184,7 +184,7 @@ public class ShippingController {
 		String username = (String) session.getAttribute("username");
 		List<Cart> kart = cartdao.getCartItems(username);
 		Random random = new Random();
-		int day = 3+ random.nextInt(6);
+		int day = 2+ random.nextInt(6);
 		Calendar cal = Calendar.getInstance();
 		Date date= kart.get(0).getCuDate();
 		cal.setTime(date);
