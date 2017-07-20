@@ -12,14 +12,29 @@
 <script src="resources/js/bootstrap.min.js"></script>
 <title>FashionFactory-user</title>
 <style type="text/css">
-body{
-	background: url(resources/img/background.jpg) !important ;
+html {
+	height: 100%;
+}
+
+body {
+	background: url(resources/img/background.jpg) !important;
 	padding: 0px;
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	position: relative;
+}
+.content{
+	padding-bottom: 60px;
 }
 </style>
 </head>
 <body>
+<div class="wrapper">
 <%@ include file="navbar.jsp"%>
+		<div class="content">
 		<c:choose>
 			<c:when test="${isUserClickedProductDes == 'true'}">
 				<%@ include file="productdescription.jsp" %>
@@ -58,5 +73,8 @@ body{
 			<%@ include file="griddisplay.jsp"%>
 			</c:otherwise>
 		</c:choose>
+		</div>
+	<%@ include file="footer.jsp" %>
+	</div>
 </body>
 </html>

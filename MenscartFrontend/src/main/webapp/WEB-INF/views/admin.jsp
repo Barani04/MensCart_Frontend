@@ -11,15 +11,27 @@
 <script src="resources/js/bootstrap.min.js"></script>
 <title>FashionFactory-admin</title>
 <style type="text/css">
+html {
+	height: 100%;
+}
  body {
 	background: url(resources/img/viewbac.jpg) !important;
 	padding: 0px;
+	height: 100%;
 }
-
+.wrapper {
+	min-height: 100%;
+	position: relative;
+}
+.content{
+	padding-bottom: 60px;
+}
 </style>
 </head>
 <body>
+<div class="wrapper">
 	<%@ include file="navbar.jsp"%>
+	<div class="content">
 	<c:choose>
 		<c:when test="${isUserClickedProduct == 'true'}">
 			<%@include file="/WEB-INF/views/Product.jsp"%>
@@ -55,5 +67,8 @@
 		<marquee direction="left" style="margin: 100px; padding: 0px 100px;"><h2>Welcome...!Admin</h2></marquee>
 	</c:otherwise>
 	</c:choose>
+	</div>
+	<%@ include file="footer.jsp" %>
+	</div>
 </body>
 </html>

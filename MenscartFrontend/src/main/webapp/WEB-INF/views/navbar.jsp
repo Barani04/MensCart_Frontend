@@ -68,8 +68,7 @@ nav a:hover {
 			</ul>
 			<ul class="nav navbar-right navbar-nav">
 				<security:authorize access="isAnonymous()">
-					<li style="font-family: 'Bellefair', serif;" class="pull-right"
-						id="login"><a href="login"> <span
+					<li style="font-family: 'Bellefair', serif;" id="login"><a href="login"> <span
 							class="glyphicon glyphicon-log-in"></span> LogIn
 					</a></li>
 					<li style="font-family: 'Bellefair', serif;" id="signup"><a
