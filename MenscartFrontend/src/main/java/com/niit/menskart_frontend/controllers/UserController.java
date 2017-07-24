@@ -108,7 +108,7 @@ public class UserController {
 			shipment.setUserId(user.getUserId());
 			shipDAO.saveOrUpdate(shipment);
 			model.addAttribute("message", "User Added Successfully...!");
-			model.addAttribute("title", "-SignUp");
+			model.addAttribute("isUserClickedLogin", "true");
 			return "home";
 		}
 		

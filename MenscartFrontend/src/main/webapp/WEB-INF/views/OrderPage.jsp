@@ -6,6 +6,10 @@
 </style>
 	<div class="container cont">
 		<h3 align="center">Your Orders</h3>
+		<c:if test="${size == 0}">
+			<h2>No Previous Orders...</h2>
+		</c:if>
+		<c:if test="${size != 0}">
 		<table class="table table-stripped table-xs">
 			<tr>
 				<th></th>
@@ -23,17 +27,18 @@
 					<td style="text-align: right;">${cartitem.qty}</td>				
 					<td style="text-align: right;">&#8377;${cartitem.price}</td>
 					<td style="text-align: right;">&#8377;${cartitem.price * cartitem.qty}</td>
-					<c:if test="${cartitem.days==-1}">
-						<td style="text-align: right; color:#06e20a;">Out for Delivery</td>
-					</c:if>
-					<c:if test="${cartitem.days<-1}">
+					<c:if test="${cartitem.days<=0}">
 						<td style="text-align: right; color:#06e20a;">Delivered</td>
 					</c:if>
-					<c:if test="${cartitem.days>=0 && cartitem.days<=2}">
+					<c:if test="${cartitem.days>=3}">
+						<td style="text-align: right; color:#06e20a;">Shipped</td>
+					</c:if>
+					<c:if test="${cartitem.days>=1 && cartitem.days<=2}">
 						<td style="text-align: right; color:#3e0cf4;">In Transit</td>
 					</c:if>
 
 				</tr>
 			</c:forEach>
 		</table>
+		</c:if>
 	</div>

@@ -34,13 +34,10 @@
 				<c:if test="${cartitem.days>=3}">
 					<td style="text-align: left; color:#ff9000;">Shipped</td>
 				</c:if>
-				<c:if test="${cartitem.days==-1}">
-					<td style="text-align: left; color:#06e20a;">Out for Delivery</td>
-				</c:if>
-				<c:if test="${cartitem.days<-1}">
+				<c:if test="${cartitem.days<=0}">
 					<td style="text-align: left; color:#06e20a;">Delivered</td>
 				</c:if>
-				<c:if test="${cartitem.days>=0 && cartitem.days<=2}">
+				<c:if test="${cartitem.days>=1 && cartitem.days<=2}">
 					<td style="text-align: left; color:#3e0cf4;">In Transit</td>
 				</c:if>
 			</tr>

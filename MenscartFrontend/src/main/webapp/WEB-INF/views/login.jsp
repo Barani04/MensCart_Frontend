@@ -70,6 +70,6 @@ body {
 	if ($alert.length) {
 		setTimeout(function() {
 			$alert.fadeOut('slow');
-		}, 4000)
+		}, 3000)
 	}
 </script>

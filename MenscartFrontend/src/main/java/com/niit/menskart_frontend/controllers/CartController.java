@@ -196,8 +196,9 @@ public class CartController {
 		System.out.println(username);
 
 		List<Cart> list = cartdao.getDispatchItems(username);
+		int size = list.size();
 		model.addAttribute("cartitems", list);
-		//model.addAttribute("title", "-History");
+		model.addAttribute("size", size);
 		model.addAttribute("isUserClickedHistory", true);
 		return "user";
 	}
@@ -212,9 +213,10 @@ public class CartController {
 				Date date= new Date();
 				long diff = d2.getTime() - date.getTime();
 				int diffDays = (int) (diff / (24 * 60 * 60 * 1000));
-				if(diffDays<-2)
+				if(diffDays<0)
 				{
-					c.setDays(-2);
+					c.setDays(0);
+					c.setStatus("Delivered");
 				}
 				else{
 					c.setDays(diffDays);

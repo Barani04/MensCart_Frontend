@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-<title>FashionFactory-user</title>
+<title>FashionFactory</title>
 <style type="text/css">
 html {
 	height: 100%;
@@ -69,7 +69,6 @@ body {
 		</c:when>
 			<c:otherwise>
 			<%@ include file="carousel.jsp"%>
-			<br>
 			<%@ include file="griddisplay.jsp"%>
 			</c:otherwise>
 		</c:choose>

@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-<title>FashionFactory-admin</title>
+<title>FashionFactory</title>
 <style type="text/css">
 html {
 	height: 100%;
